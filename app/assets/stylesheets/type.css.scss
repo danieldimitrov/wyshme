@@ -1,0 +1,110 @@
+html {
+  font: normal 100%/1;
+}
+
+body {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+  color: #444444;
+}
+
+small {
+  font-size: 65%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+  margin-top: 0;
+  text-rendering: optimizeLegibility; /*  voodoo to enable ligatures and kerning | https://developer.mozilla.org/en-US/docs/CSS/text-rendering */
+  color: #222222;
+}
+
+h1 {
+  font-size: 36px;
+  font-size: 2.5714rem; /* 36 / 14 = 2.5714 */
+  margin-bottom: 0.495em;
+}
+
+h2 {
+  font-size: 30px;
+  font-size: 2.1428rem;
+  margin-bottom: 0.61875rem;
+}
+
+h3 {
+  font-size: 24px;
+  font-size: 1.7142rem;
+  margin-bottom: 0.825em;
+}
+
+h4 {
+  font-size: 18px;
+  font-size: 1.2857rem;
+  margin-bottom: 1.2375em;
+}
+
+h5 {
+  font-size: 14px;
+  font-size: 1rem; 
+  margin-bottom: 1.4; /* measure( base font-size(18) * base line-height(1.65) ) / current font-size(21) = margin-bottom(1.4142857142857141) */
+}
+
+h6 {
+  font-size: 12px;
+  font-size: 1rem;
+  margin-bottom: 1.65em;
+}
+
+
+p {
+  margin: auto auto 1.5em; /* bottom margin for paragraphs */
+}
+
+pre code {
+  word-wrap: normal;
+  white-space: -moz-pre-wrap;
+  white-space: pre-wrap; /* http://css-tricks.com/almanac/properties/w/whitespace */
+}
+
+pre {
+  white-space: pre;
+}
+
+code {
+  white-space: pre;
+  font-family: monospace;
+}
+
+abbr {
+  font-variant: small-caps; /* https://developer.mozilla.org/en-US/docs/CSS/font-variant */
+  font-weight: 600;
+  text-transform: lowercase;
+  color: #808080;
+}
+
+abbr[title]:hover {
+  cursor: help; /* cursor changed to a question mark when it has a title */
+}
+
+.blockquote p:last-of-type {
+  margin-bottom: -0.825em;
+}
+
+.blockquote + figcaption {
+  display: block;
+  font-size: inherit;
+  text-align: right;
+}
+
+.blockquote + figcaption:before {
+  content: "-"; /* "-" is your citation flourish */
+}

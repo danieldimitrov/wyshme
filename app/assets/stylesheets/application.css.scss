@@ -11,3 +11,11 @@
  *= require_self
  *= require_tree .
  */
+@import "normalize";
+@import "type";
+@import "variables";
+@import "semantic-ui";
+@import "semantic_wyshme";
+@import "base";
+
+@import "board";
