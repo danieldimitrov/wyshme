@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html>
   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title></title>
-      <meta name="description" content="">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+    <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
+    <link href='http://fonts.googleapis.com/css?family=Chango' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
 
-      <link href='http://fonts.googleapis.com/css?family=Chango' rel='stylesheet' type='text/css'>
-      <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+    <!--[if IE]>
+    <link href="css/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
 
-      <!--[if IE]>
-          <link href="css/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
-      <![endif]-->
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 
-      <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-
-      <%= csrf_meta_tags %>
+    <%= csrf_meta_tags %>
   </head>
   <body id="app">
     <!--[if lt IE 8]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <%= render :partial => 'layouts/navigation' -%>
@@ -35,7 +35,7 @@
     </div>
 
 
-    <%= render :partial => 'layouts/footer_js' -%>
-    
+    <%= render partial: 'layouts/footer_js' %>
+
   </body>
 </html>

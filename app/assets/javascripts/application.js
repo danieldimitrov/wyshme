@@ -12,16 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 
-//= require modernizr
 //= require semantic-ui
 
 //= require_tree .
 
-
-
-(function() {
+$(function() {
     $('.ui.dropdown').dropdown();
     $('.ui.checkbox').checkbox();
 
