@@ -2,3 +2,7 @@
 .ui.menu.fixed {
   z-index: 11;
 }
+
+.ui.segment:first-child {
+  margin: 1em 0em !important;
+}
