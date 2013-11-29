@@ -23,6 +23,7 @@
 
 (function() {
     $('.ui.dropdown').dropdown();
+    $('.ui.checkbox').checkbox();
 
     $('#register-modal.modal').modal('attach events', '.register-toggler', 'show');
     $('#login-modal.modal').modal('attach events', '.login-toggler', 'show');
