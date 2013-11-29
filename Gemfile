@@ -24,7 +24,7 @@ gem 'jquery-rails'
 gem 'modernizr_rails'
 gem 'semantic-ui-sass', '~> 0.9.5.0'
 
-gem 'angular-rails'
+gem 'angularjs-rails'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

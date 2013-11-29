@@ -11,12 +11,18 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
+// require jquery_ujs
 
 //= require modernizr
 //= require semantic-ui
 
-//= require_tree .
+//= require angular
+//= require angular_app
+//= require_tree ./angular
+
+//= require plugins
+//= require boards
+//= require account
 
 $(function() {
   $('.ui.dropdown').dropdown();
@@ -51,4 +57,4 @@ $(function() {
   // $('.ui.popup').popup();
 
   $('#account-sidebar.sidebar').sidebar({overlay: true}).sidebar('toggle');
-}());
+});
