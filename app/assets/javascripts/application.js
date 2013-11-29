@@ -12,45 +12,41 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 
-//= require modernizr
 //= require semantic-ui
 
 //= require_tree .
 
+$(function() {
+  $('.ui.dropdown').dropdown();
 
+  $('#register-modal.modal').modal('attach events', '.register-toggler', 'show');
+  $('#login-modal.modal').modal('attach events', '.login-toggler', 'show');
+  $('#new-list-modal.modal').modal('attach events', '.new-wysh-list', 'show');
+  $('.tooltip').popup();
+  $('#wysh-list-toggler').on('click', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    $('#wish-list-brief').toggle();
+  });
+  $(document).click(function() {
+    $('#wish-list-brief').hide();
+  });
+  $('#wish-list-brief').on('click', function(event) {
+    event.stopPropagation();
+  });
+  $('#wysh-list .item').on('click', function(event) {
+    event.preventDefault();
+    $('#wysh-list .item').removeClass('active');
+    $(this).addClass('active');
+    $(this).scrollintoview();
+  });
+  $('#wysh-list .item .ui.buttons.actions .close').on('click', function(event) {
+    event.preventDefault();
+    $('#wysh-list .item').removeClass('active');
+    $(this).closest('.item').scrollintoview();
+  });
+  // $('.ui.popup').popup();
 
-(function() {
-    $('.ui.dropdown').dropdown();
-
-    $('#register-modal.modal').modal('attach events', '.register-toggler', 'show');
-    $('#login-modal.modal').modal('attach events', '.login-toggler', 'show');
-    $('#new-list-modal.modal').modal('attach events', '.new-wysh-list', 'show');
-    $('.tooltip').popup();
-    $('#wysh-list-toggler').on('click', function(event) {
-      event.preventDefault();
-      event.stopPropagation();
-      $('#wish-list-brief').toggle();
-    });
-    $(document).click(function() {
-        $('#wish-list-brief').hide();
-    });
-    $('#wish-list-brief').on('click', function(event) {
-      event.stopPropagation();
-    });
-    $('#wysh-list .item').on('click', function(event) {
-      event.preventDefault();
-      $('#wysh-list .item').removeClass('active');
-      $(this).addClass('active');
-      $(this).scrollintoview();
-    });
-    $('#wysh-list .item .ui.buttons.actions .close').on('click', function(event) {
-      event.preventDefault();
-      $('#wysh-list .item').removeClass('active');
-      $(this).closest('.item').scrollintoview();
-    });
-    // $('.ui.popup').popup();
-
-    $('#account-sidebar.sidebar').sidebar({overlay: true}).sidebar('toggle');
-}());
+  $('#account-sidebar.sidebar').sidebar({overlay: true}).sidebar('toggle');
+});
