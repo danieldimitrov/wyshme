@@ -17,6 +17,7 @@
 //= require semantic-ui
 
 //= require angular
+//= require angular-resource
 //= require angular_app
 //= require_tree ./angular
 
