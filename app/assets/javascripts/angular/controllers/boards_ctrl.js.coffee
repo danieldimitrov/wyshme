@@ -1,4 +1,4 @@
-App.controller 'BoardsCtrl', ['$scope', ($scope) ->
+App.controller 'BoardsCtrl', ['$scope', 'Board', ($scope, Board) ->
   $scope.items = [
     {
       image_url: "/assets/demo/Nextime-Old-fashioned-Turntable-Clock.jpg"
@@ -53,4 +53,7 @@ App.controller 'BoardsCtrl', ['$scope', ($scope) ->
       likes: 525
     }
   ]
+
+  # TODO: uncomment line below to start work through API
+  #$scope.items = Board.query()
 ]
