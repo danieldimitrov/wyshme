@@ -18,9 +18,10 @@ body {
     padding-top: 50px;
   }
 
-  #logo {
+  #logo, #logo a {
     font-family: 'Chango', cursive;
     color: #5856D6;
+    text-decoration: none;
   }
 
   #wysh-list-toggler {

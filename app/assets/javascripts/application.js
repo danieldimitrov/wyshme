@@ -58,4 +58,6 @@ $(function() {
   // $('.ui.popup').popup();
 
   $('#account-sidebar.sidebar').sidebar({overlay: true}).sidebar('toggle');
+
+  $('#selected-item').dimmer('show');
 });
