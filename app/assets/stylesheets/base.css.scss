@@ -1,5 +1,5 @@
 $bgColor:       #eeeeee !default;
-$primary:       #5856D6 !default;
+$primary:       #A14A9C !default;
 $secondary:     #4CD964 !default;
 body {
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -79,6 +79,22 @@ body {
         transform: translate(-50%, 0);
         width: 10em;
         display: none;
+
+        .wysh-color-1 {
+          background: $primary;
+
+          .icon {
+            color: rgba(255, 255, 255, 0.9);
+          }
+        }
+
+        .wysh-color-2 {
+          background: $secondary;
+
+          .icon {
+            color: rgba(255, 255, 255, 0.9);
+          }
+        }
 
         button {
           padding: 0.4em 1em;
