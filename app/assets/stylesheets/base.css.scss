@@ -46,8 +46,16 @@ body {
     }
   }
 
-  #wysh-list {
+  .ui.items {
     > .item {
+      cursor: default;
+
+      .image, .name {
+        cursor: pointer;
+      }
+      .name:hover {
+        text-decoration: underline;
+      }
       .extended-content {
         display: none;
 
@@ -120,10 +128,30 @@ body {
       
       &.active {
         float: none;
-        width: 100%;
+        width: 80%;
         text-align: left;
         vertical-align: top;
         clear: both;
+        margin: 20px auto 0;
+        cursor: default;
+        z-index: 1001;
+
+        .close.button {
+          position: absolute;
+          top: 0;
+          right: 0;
+          font-size: 2em;
+          padding: 0;
+          box-shadow: none;
+          width: 1.5em;
+          text-align: center;
+          height: 1.5em;
+
+          &:active {
+            background: none !important;
+            box-shadow: none !important;
+          }
+        }   
 
         .extended-content {
           display: block;
@@ -133,7 +161,8 @@ body {
           float: none;
           width: 40%;
           display: inline-block;
-          margin: 0 5% 0 0;
+          margin: 0 3% 0 0;
+          cursor: default;
         }
 
         .content {

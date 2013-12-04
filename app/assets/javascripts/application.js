@@ -44,20 +44,17 @@ $(function() {
   $('#wish-list-brief').on('click', function(event) {
     event.stopPropagation();
   });
-  $('#wysh-list .item').on('click', function(event) {
-    event.preventDefault();
-    $('#wysh-list .item').removeClass('active');
-    $(this).addClass('active');
-    $(this).scrollintoview();
-  });
-  $('#wysh-list .item .ui.buttons.actions .close').on('click', function(event) {
-    event.preventDefault();
-    $('#wysh-list .item').removeClass('active');
-    $(this).closest('.item').scrollintoview();
-  });
-  // $('.ui.popup').popup();
 
   $('#account-sidebar.sidebar').sidebar({overlay: true}).sidebar('toggle');
 
-  $('#selected-item').dimmer('show');
+  $('#wysh-list .item:not(.active) .image, #wysh-list .item:not(.active) .name').on('click', function(event) {
+    event.preventDefault();
+    $('#selected-item').show();
+    $('#selected-item').dimmer('show');
+  });
+
+  $('.active.item .close.button').on('click', function () {
+    $('#selected-item').dimmer('hide');
+    $('#selected-item').hide();
+  });
 });

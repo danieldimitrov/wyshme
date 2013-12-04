@@ -7,13 +7,13 @@
     </div>
     <div class="content">
       <div class="ui buttons actions">
-        <button class="ui blue button"><i class="gift icon"></i></button>
+        <button class="ui blue button"><i class="like icon"></i></button>
         <div class="ui label">{{item.wyshes}} Wyshes</div>
-        <button class="ui button"><i class="like icon"></i></button>
+        <button class="ui button"><i class="thumbs up outline icon"></i></button>
         <div class="ui label">{{item.likes}} Likes</div>
         <button class="ui basic close button">close</button>
       </div>
-      <div class="name">{{item.name}}</div>
+      <h2 class="name">{{item.name}}</h2>
       <p class="price">${{item.price}}</p>
       <p class="description">{{item.description}}</p>
 
@@ -60,12 +60,68 @@
 </div>
 <div id="selected-item">
   <div class="ui inverted dimmer">
-    <div class="content">
+    <div class="" style="position:fixed;width: 100%;">
 
 
       <div class="ui text loader">Loading</div>
-      <div class="center">
-        <!-- item content goes here...   -->
+      <div class="center ui items">
+        <div class="active item">
+          <button class="ui basic close button"><i class="remove icon"></i></button>
+          
+          <div class="image">
+            <img src="/assets/demo/05cea7c294cdda1708708c8ea87e2dac.jpg">
+          </div>
+
+          <div class="content">
+            <div class="ui buttons actions">
+              <button class="ui blue button"><i class="like icon"></i></button>
+              <div class="ui label ng-binding">115 Wyshes</div>
+              <button class="ui button"><i class="thumbs up outline icon"></i></button>
+              <div class="ui label ng-binding">25 Likes</div>
+            </div>
+            <div class="name ng-binding">Cute Dog</div>
+            <p class="price ng-binding">$88.99</p>
+            <p class="description ng-binding">Just a dog and his monkey :))</p>
+
+            <div class="extended-content">
+              <div class="ui section divider"></div>
+
+              <div class="wyshed-by-list">
+                <h3>Wyshed by</h3>
+                <a href="#" class="circular ui small icon button">
+                  <i class="icon user"></i>
+                </a>
+                <a href="#" class="circular ui small icon button">
+                  <i class="icon user"></i>
+                </a>
+                <a href="#" class="circular ui small icon button">
+                  <i class="icon user"></i>
+                </a>
+                <a href="#" class="circular ui small icon button">
+                  <i class="icon user"></i>
+                </a>
+              </div>
+
+              <div class="related-list">
+                <h3>Related Items</h3>
+                <a href="#">
+                  <img alt="Nextime old fashioned turntable clock" src="/assets/demo/Nextime-Old-fashioned-Turntable-Clock.jpg">
+                </a>
+                <a href="#">
+                  <img alt="238118e9dfa790712af9749c56c8ea16" src="/assets/demo/238118e9dfa790712af9749c56c8ea16.jpg">
+                </a>
+                <a href="#">
+                  <img alt="105174 l 85" src="/assets/demo/105174_l_85.jpg">
+                </a>
+              </div>                
+            </div>
+
+            <div class="extra">
+                <span class="wyshes-count ng-binding"><i class="like icon"></i> 115</span>&nbsp;
+                <span class="likes-count ng-binding"><i class="thumbs up icon"></i> 25</span>
+            </div>
+          </div>
+        </div>
       </div>
 
 
