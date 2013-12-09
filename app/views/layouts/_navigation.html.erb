@@ -1,5 +1,4 @@
 
-
 <div class="ui fixed transparent main menu">
   <div class="container">
     <div id="logo" class="left item">
@@ -21,10 +20,8 @@
       </div>
     </div>
 
-
-
     <div class="right menu">
-      <div class="item">
+      <div class="item" ng-controller="AuthCtrl">
         <a href="#" class="login-toggler">Login</a>
         or <a href="#" class="register-toggler">Register</a>
 
@@ -37,9 +34,10 @@
           <div class="content">
             <div class="ui form">
               <div class="field">
-                <label>Username</label>
+                <label>Email</label>
                 <div class="ui left labeled icon input">
-                  <input type="text" placeholder="Username">
+                  <input name="user[email]" type="text" required
+                         placeholder="Your email" ng-model="loginData.user.email">
                   <i class="user icon"></i>
                   <div class="ui corner label">
                     <i class="icon asterisk"></i>
@@ -49,7 +47,8 @@
               <div class="field">
                 <label>Password</label>
                 <div class="ui left labeled icon input">
-                  <input type="password">
+                  <input name="user[password]" type="password" required
+                         placeholder="Your password" ng-model="loginData.user.password">
                   <i class="lock icon"></i>
                   <div class="ui corner label">
                     <i class="icon asterisk"></i>
@@ -59,7 +58,7 @@
               <div class="ui error message">
                 <div class="header">We noticed some issues</div>
               </div>
-              <button class="ui blue submit button">Login</button>
+              <button class="ui blue submit button" ng-click="login()">Login</button>
             </div>
           </div>
         </div>
@@ -72,11 +71,12 @@
           </div>
           <div class="content">
             <div class="ui form">
-
               <div class="field">
-                <label>Username</label>
+                <label>Email</label>
                 <div class="ui left labeled icon input">
-                  <input type="text" placeholder="Username">
+                  <input name="user[email]" type="text" required
+                         placeholder="Your email"
+                         ng-model="registrationData.user.email">
                   <i class="user icon"></i>
                   <div class="ui corner label">
                     <i class="icon asterisk"></i>
@@ -86,19 +86,31 @@
               <div class="field">
                 <label>Password</label>
                 <div class="ui left labeled icon input">
-                  <input type="password">
+                  <input name="user[password]" type="password"
+                         placeholder="Your password"
+                         ng-model="registrationData.user.password">
                   <i class="lock icon"></i>
                   <div class="ui corner label">
                     <i class="icon asterisk"></i>
                   </div>
                 </div>
               </div>
-
-              <button class="ui blue submit button">Register</button>
+              <div class="field">
+                <label>Password confirmation</label>
+                <div class="ui left labeled icon input">
+                  <input name="user[password_confirmation]" type="password"
+                         placeholder="Retype your password"
+                         ng-model="registrationData.user.password_confirmation">
+                  <i class="lock icon"></i>
+                  <div class="ui corner label">
+                    <i class="icon asterisk"></i>
+                  </div>
+                </div>
+              </div>
+              <button class="ui blue submit button" ng-click="register()">Register</button>
             </div>
           </div>
         </div>
-
       </div>
 
 
