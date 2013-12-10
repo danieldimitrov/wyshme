@@ -12,12 +12,6 @@
         <div class="menu">
           <!-- <div class="item active" data-value="0">Anything</div> -->
           <div class="item active" data-value="{{cat.id}}" ng-repeat="cat in categories">{{cat.name}}</div>
-<!-- 
-          <div class="item" data-value="1">Popular</div>
-          <div class="item" data-value="2">Gifts</div>
-          <div class="item" data-value="3">Animals</div>
-          <div class="item" data-value="4">Art</div>
-          <div class="item" data-value="5">Design</div> -->
         </div>
       </div>
     </div>
@@ -148,11 +142,11 @@
           <a href="#" class="ui positive fluid button new-wysh-list">Add New Wysh</a> 
         </div>
 
-        <div id="new-list-modal" class="ui modal">
+        <div id="new-wysh-modal" class="ui modal" ng-controller="CategoriesCtrl">
           <i class="close icon"></i>
 
           <div class="header">
-            New Wysh List
+            New Wysh
           </div>
           <div class="content">
             <div class="ui form">
@@ -160,6 +154,21 @@
                 <label>Name</label>
                 <div class="ui left input">
                   <input type="text" placeholder="">
+                </div>
+              </div>
+              <div class="field">
+                <label>Category</label>
+                <div class="wysh-category ui left input">
+                  <div class="multinput">
+                    <span class="ui blue labels"></span>
+                    <input id="wysh_category" type="text"  placeholder="Add Category...">
+                  </div>
+                  <div class="cat-list">
+                    <div class="ui vertical fluid menu">
+                      <a href="#" class="item new-cat disabled"><i class="add icon"></i> Create new category</a>
+                      <a href="#" class="item" ng-repeat="cat in categories"><span>{{cat.name}}</span></a>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="field">

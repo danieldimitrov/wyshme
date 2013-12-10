@@ -25,14 +25,69 @@
 //= require boards
 //= require account
 
+$(document).click(function(e) {
+  $('#new-wysh-modal .wysh-category').removeClass('active');
+});
+
 $(function() {
   $('.ui.dropdown').dropdown();
   $('.ui.checkbox').checkbox();
+  $('.tooltip').popup();
 
   $('#register-modal.modal').modal('attach events', '.register-toggler', 'show');
   $('#login-modal.modal').modal('attach events', '.login-toggler', 'show');
-  $('#new-list-modal.modal').modal('attach events', '.new-wysh-list', 'show');
-  $('.tooltip').popup();
+  $('#new-wysh-modal.modal').modal('attach events', '.new-wysh-list', 'show');
+
+  $('#new-wysh-modal .wysh-category .multinput input').on('input', function () {
+    // check is category already created
+    var val = $(this).val().toLowerCase();
+    var alreadyCreated = false;
+    $('#new-wysh-modal .wysh-category .cat-list .item:not(.new-cat) span').each(function(){
+      if(val==$(this).html().toLowerCase()){
+        alreadyCreated = true;
+        return false;
+      }
+    });
+    if($(this).val()=='' || alreadyCreated){
+      $(this).closest('.wysh-category').find('.cat-list .item.new-cat').addClass('disabled');
+    } else {
+      $(this).closest('.wysh-category').find('.cat-list .item.new-cat').removeClass('disabled');
+    }
+  });
+  $('#new-wysh-modal .wysh-category .multinput').on('click', function (e) {
+    e.stopPropagation();
+    $(this).closest('.wysh-category').addClass('active');
+    var input = $(this).find('input');
+    input.focus();
+  });
+  $('#new-wysh-modal .wysh-category .multinput .labels').on('click', function (e) {
+    e.stopPropagation();
+  });
+  $('#new-wysh-modal .cat-list .item').on('click', function (e) {
+    e.stopPropagation();
+    if($(this).hasClass('disabled')){
+      return false;
+    }
+    if($(this).hasClass('new-cat')){
+      var input = $(this).closest('.wysh-category').find('input');
+      var val = input.val();
+      input.val('');
+      $(this).addClass('disabled');
+    }
+    else {
+      var val = $(this).html();
+    }
+    var label = $('<a class="ui label">'+val+' </a>');
+    $('<i class="icon close"></i>')
+      .on('click', function () {
+        $(this).parent('.label').remove();
+        return false;
+      })
+      .appendTo(label);
+    $(this).closest('.input').find('.multinput .labels').append(label);
+  });
+
+
   $('#wysh-list-toggler').on('click', function(event) {
     event.preventDefault();
     event.stopPropagation();
