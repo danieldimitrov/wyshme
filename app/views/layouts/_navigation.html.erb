@@ -5,17 +5,19 @@
       <a href="/"><img src="assets/logo.png" style="height: 20px;"></a>
     </div>
     <div class="left menu">
-      <div class="ui section dropdown item">
+      <div class="ui section dropdown item" ng-controller="CategoriesCtrl">
         <input type="hidden" name="category">
         <div class="text">Browse Categories</div>
         <i class="dropdown icon"></i>
         <div class="menu">
-          <div class="item active" data-value="0">Anything</div>
+          <!-- <div class="item active" data-value="0">Anything</div> -->
+          <div class="item active" data-value="{{cat.id}}" ng-repeat="cat in categories">{{cat.name}}</div>
+<!-- 
           <div class="item" data-value="1">Popular</div>
           <div class="item" data-value="2">Gifts</div>
           <div class="item" data-value="3">Animals</div>
           <div class="item" data-value="4">Art</div>
-          <div class="item" data-value="5">Design</div>
+          <div class="item" data-value="5">Design</div> -->
         </div>
       </div>
     </div>
