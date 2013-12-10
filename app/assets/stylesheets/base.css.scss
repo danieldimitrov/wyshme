@@ -28,7 +28,7 @@ body {
     text-decoration: none;
   }
 
-  #wish-list-brief {
+  #wysh-list-brief {
     position: absolute;
     top: 30px;
     right: 0;
@@ -43,6 +43,15 @@ body {
         overflow: hidden;
         text-overflow: ellipsis;
       }
+    }
+
+    .new-wysh-list {
+      position: absolute;
+      top: 20px;
+      right: 15px;
+      text-decoration: none;
+      color: #555;
+      font-size: 1.3em;
     }
   }
 
@@ -255,6 +264,18 @@ body {
       display: table-cell;
       vertical-align: top;
     }
+  }
+
+  .read-more {
+    display: block;
+    margin: 1em auto 0em;
+    width: 18em;
+  }
+
+  .welcome-text {
+    text-align: center;
+    line-height: 1.5em;
+    color: #A14A9C;
   }
 } 
 
