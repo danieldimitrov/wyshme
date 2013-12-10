@@ -95,5 +95,66 @@ $(function() {
         }
       ]
     }
+  });  
+  $('#home-registration.ui.form, #register-modal .ui.form').form({
+    email: {
+      identifier  : 'user[email]',
+      rules: [
+        {
+          type   : 'email',
+          prompt  : 'Please add valid email'
+        }
+      ]
+    },
+    password: {
+      identifier : 'user[password]',
+      rules: [
+        {
+          type   : 'empty',
+          prompt : 'Please enter a password'
+        },
+        {
+          type   : 'length[6]',
+          prompt : 'Your password must be at least 6 characters'
+        }
+      ]
+    },
+    passwordConfirm: {
+      identifier : 'user[password_confirmation]',
+      rules: [
+        {
+          type   : 'empty',
+          prompt : 'Please enter a password confirmation'
+        },
+        {
+          type   : 'match[password]',
+          prompt : 'Confirmed password doesn\'t match'
+        }
+      ]
+    }
+  });
+  $('#login-modal .ui.form').form({
+    email: {
+      identifier  : 'user[email]',
+      rules: [
+        {
+          type   : 'email',
+          prompt  : 'Please add valid email'
+        }
+      ]
+    },
+    password: {
+      identifier : 'user[password]',
+      rules: [
+        {
+          type   : 'empty',
+          prompt : 'Please enter a password'
+        },
+        {
+          type   : 'length[6]',
+          prompt : 'Your password must be at least 6 characters'
+        }
+      ]
+    }
   });
 });

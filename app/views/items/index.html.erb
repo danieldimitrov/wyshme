@@ -1,7 +1,7 @@
 <div class="ui two column page grid">
   <h3 class="welcome-text">WyshMe makes it easy to send the perfect gift to your friends and family on their special events, and helps you reallyceive the gifts you really want!</h3> 
   <div class="column">
-    <div class="ui form segment">
+    <div id="home-registration" class="ui form segment">
       <h4>Start add your Wyshes right now!</h4>
       <div class="field">
         <label>Email</label>
@@ -39,19 +39,44 @@
           </div>
         </div>
       </div>
-      <div class="inline field">
-        <div class="ui checkbox">
-          <input type="checkbox" id="terms">
-          <label for="terms"></label>
-        </div>
-        <label>I agree to the terms and conditions</label>
-      </div>
       <br>
       <button class="ui blue submit button" ng-click="register()">Register</button>&nbsp;&nbsp; or&nbsp; <a href="#" class="login-toggler">Login</a>
+      <div class="ui error message"></div>
     </div>
   </div>
   <div class="column">
-    Latest Wyshes
+    <br>
+    <h4 class="ui inverted black block header">Latest Wyshes</h4>
+    <div class="ui items latest-wyshes">
+      <div class="item">
+        <div class="image">
+          <img src="/assets/demo/Nextime-Old-fashioned-Turntable-Clock.jpg">
+        </div>
+      </div> 
+      <div class="item">
+        <div class="image">
+          <img src="/assets/demo/26490938_018_b.jpg">
+        </div>
+      </div> 
+      <div class="item">
+        <div class="image">
+          <img src="/assets/demo/05cea7c294cdda1708708c8ea87e2dac.jpg">
+        </div>
+      </div> 
+      <div class="item">
+        <div class="image">
+          <img src="/assets/demo/05cea7c294cdda1708708c8ea87e2dac.jpg">
+        </div>
+      </div> 
+      <div class="item">
+        <div class="image">
+          <img src="/assets/demo/105174_l_85.jpg">
+        </div>
+      </div>  
+    </div>
+
+    <h4 class="ui inverted black block header">Latest Wyshers</h4>
+    
   </div>
   <div class="ui clearing divider"></div>
   <a href="#" class="ui massive button positive read-more">See How WyshMe Works <i class="arrow right icon"></i></a>
