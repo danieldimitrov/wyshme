@@ -18,6 +18,7 @@
 
 //= require angular
 //= require angular-resource
+//= require angular-cookies
 //= require angular_app
 //= require_tree ./angular
 
