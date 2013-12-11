@@ -97,7 +97,7 @@ $(function() {
       ]
     }
   });  
-  $('#home-registration.ui.form, #register-modal .ui.form').form({
+  $('#home-registration.ui.form').form({
     email: {
       identifier  : 'user[email]',
       rules: [
@@ -126,11 +126,50 @@ $(function() {
         {
           type   : 'empty',
           prompt : 'Please enter a password confirmation'
+        }
+        // ,
+        // {
+        //   type   : 'match[password]',
+        //   prompt : 'Confirmed password doesn\'t match'
+        // }
+      ]
+    }
+  });
+  $('#register-modal .ui.form').form({
+    email: {
+      identifier  : 'user[email]',
+      rules: [
+        {
+          type   : 'email',
+          prompt  : 'Please add valid email'
+        }
+      ]
+    },
+    password: {
+      identifier : 'user[password]',
+      rules: [
+        {
+          type   : 'empty',
+          prompt : 'Please enter a password'
         },
         {
-          type   : 'match[password]',
-          prompt : 'Confirmed password doesn\'t match'
+          type   : 'length[6]',
+          prompt : 'Your password must be at least 6 characters'
         }
+      ]
+    },
+    passwordConfirm: {
+      identifier : 'user[password_confirmation]',
+      rules: [
+        {
+          type   : 'empty',
+          prompt : 'Please enter a password confirmation'
+        }
+        // ,
+        // {
+        //   type   : 'match[password]',
+        //   prompt : 'Confirmed password doesn\'t match'
+        // }
       ]
     }
   });
