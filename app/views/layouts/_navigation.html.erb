@@ -16,8 +16,8 @@
       </div>
     </div>
 
-    <div class="right menu">
-      <div class="item"  ng-controller="AuthCtrl">
+    <div class="right menu" ng-controller="AuthCtrl">
+      <div class="item">
         <div ng-hide="auth.isLoggedIn()">
           <a href="#" class="login-toggler">Login</a>
           or <a href="#" class="register-toggler">Register</a>
@@ -114,7 +114,7 @@
         </div>
       </div>
 
-      <span ng-controller="AuthCtrl">
+      <span>
         <div class="item icon" ng-show="auth.isLoggedIn()">
           <a href="#" id="wysh-list-toggler" class="tooltip" data-content="Your Wysh Lists">
             <i class="unordered list icon"></i>

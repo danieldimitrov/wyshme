@@ -115,7 +115,7 @@ $(function() {
           prompt : 'Please enter a password'
         },
         {
-          type   : 'length[6]',
+          type   : 'length[8]',
           prompt : 'Your password must be at least 6 characters'
         }
       ]
@@ -153,7 +153,7 @@ $(function() {
           prompt : 'Please enter a password'
         },
         {
-          type   : 'length[6]',
+          type   : 'length[8]',
           prompt : 'Your password must be at least 6 characters'
         }
       ]
@@ -191,7 +191,7 @@ $(function() {
           prompt : 'Please enter a password'
         },
         {
-          type   : 'length[6]',
+          type   : 'length[8]',
           prompt : 'Your password must be at least 6 characters'
         }
       ]
