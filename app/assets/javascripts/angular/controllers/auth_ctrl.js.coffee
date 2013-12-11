@@ -1,6 +1,7 @@
 App.controller 'AuthCtrl', ['$scope', 'Auth', ($scope, Auth) ->
   $scope.successAuth = (data) ->
     console.log('success', data)
+    REMOVE SHIT
     # Store user data in the cookies.
     # Show user's profile partial and hide links to login/register
     # forms.
@@ -20,4 +21,5 @@ App.controller 'AuthCtrl', ['$scope', 'Auth', ($scope, Auth) ->
   $scope.register = ->
     Auth.register($scope.registrationData, $scope.successAuth, $scope.errorAuth)
 
+  $scope.auth = Auth
 ]

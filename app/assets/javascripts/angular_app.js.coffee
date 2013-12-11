@@ -1,4 +1,4 @@
-window.App = angular.module('WyshMe', ['ngResource'])
+window.App = angular.module('WyshMe', ['ngResource', 'ngCookies'])
 
 App.config ['$httpProvider', ($httpProvider) ->
   $httpProvider.defaults.useXDomain = true;
