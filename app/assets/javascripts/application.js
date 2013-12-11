@@ -115,8 +115,8 @@ $(function() {
           prompt : 'Please enter a password'
         },
         {
-          type   : 'length[6]',
-          prompt : 'Your password must be at least 6 characters'
+          type   : 'length[8]',
+          prompt : 'Your password must be at least 8 characters'
         }
       ]
     },
@@ -153,8 +153,8 @@ $(function() {
           prompt : 'Please enter a password'
         },
         {
-          type   : 'length[6]',
-          prompt : 'Your password must be at least 6 characters'
+          type   : 'length[8]',
+          prompt : 'Your password must be at least 8 characters'
         }
       ]
     },
@@ -191,8 +191,8 @@ $(function() {
           prompt : 'Please enter a password'
         },
         {
-          type   : 'length[6]',
-          prompt : 'Your password must be at least 6 characters'
+          type   : 'length[8]',
+          prompt : 'Your password must be at least 8 characters'
         }
       ]
     }
