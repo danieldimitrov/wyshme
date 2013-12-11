@@ -1,8 +1,8 @@
-<div ng-controller="AuthCtrl">
-  <div class="ui two column stackable page grid" ng-hide="auth.isLoggedIn()">
+<div>
+  <div class="ui two column stackable page grid">
     <h3 class="welcome-text">WyshMe makes it easy to send the perfect gift to your friends and family on their special events, and helps you receive the gifts you really want!</h3> 
-    <div class="column">
-      <div id="home-registration" class="ui form segment">
+    <div class="column" ng-controller="AuthCtrl">
+      <div id="home-registration" class="ui form segment" ng-hide="auth.isLoggedIn()">
         <h4>Start adding your Wyshes right now!</h4>
         <div class="field">
           <label>Email</label>
