@@ -1,5 +1,26 @@
+.latest-wyshers.ui.items,
 .latest-wyshes.ui.items {
   > .item {
     min-height: 5em;
+    padding: 0;
+
+    .image {
+      height: 5em;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #FFF;
+    }
+  }
+}
+
+.latest-wyshers.ui.items {
+  > .item {
+    background: none;
+    padding: 0;
+
+    .image {
+
+    }
   }
 }
