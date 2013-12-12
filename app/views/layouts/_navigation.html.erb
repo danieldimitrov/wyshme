@@ -2,7 +2,7 @@
 <div class="ui fixed transparent main menu">
   <div class="container">
     <div id="logo" class="left item">
-      <a href="/"><img src="assets/logo.png" style="height: 20px;"></a>
+      <a href="/"><%= image_tag('logo.png', height: '20') %></a>
     </div>
     <div class="left menu">
       <div class="ui section dropdown item" ng-controller="CategoriesCtrl">
@@ -23,7 +23,7 @@
           or <a href="#" class="register-toggler">Register</a>
         </div>
         <div id="user-details" ng-show="auth.isLoggedIn()">
-          <%= image_tag("demo/ivan.jpg", :width => '24') %>
+          <%= image_tag('demo/ivan.jpg', width: '24') %>
           <span>{{auth.user.email}}</span>
         </div>
         <div id="login-modal" class="ui modal">
