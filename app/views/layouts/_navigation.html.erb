@@ -17,14 +17,18 @@
     </div>
 
     <div class="right menu" ng-controller="AuthCtrl">
-      <div class="item">
-        <div ng-hide="auth.isLoggedIn()">
+      <div id="user-details"  class="ui section dropdown item" ng-show="auth.isLoggedIn()">
+        <%= image_tag('demo/ivan.jpg', width: '24') %>
+        <span>{{auth.user.email}}</span>
+        <div class="menu">
+          <div class="item">Edit Profile</div>
+          <div class="item">Logout</div>
+        </div>
+      </div>
+      <div class="item" ng-hide="auth.isLoggedIn()">
+        <div>
           <a href="#" class="login-toggler">Login</a>
           or <a href="#" class="register-toggler">Register</a>
-        </div>
-        <div id="user-details" ng-show="auth.isLoggedIn()">
-          <%= image_tag('demo/ivan.jpg', width: '24') %>
-          <span>{{auth.user.email}}</span>
         </div>
         <div id="login-modal" class="ui modal">
           <i class="close icon"></i>
