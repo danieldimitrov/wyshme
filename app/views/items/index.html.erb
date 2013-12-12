@@ -49,23 +49,24 @@
       <h4 class="ui inverted black block header" style="margin-top: 1em;">Latest Wyshes</h4>
       <div class="ui items latest-wyshes">
         <div class="item">
-          <div class="image" style="background-image:url(/assets/demo/Nextime-Old-fashioned-Turntable-Clock.jpg)">
+          <div class="image" style="background-image:url(<%= image_path('demo/Nextime-Old-fashioned-Turntable-Clock.jpg') %>)">
           </div>
         </div> 
         <div class="item">
-          <div class="image" style="background-image:url(/assets/demo/26490938_018_b.jpg)">
+          <div class="image" style="background-image:url(<%= image_path('demo/26490938_018_b.jpg') %>)">
           </div>
         </div> 
         <div class="item">
-          <div class="image" style="background-image:url(/assets/demo/05cea7c294cdda1708708c8ea87e2dac.jpg)">
+          <div class="image"
+               style="background-image:url(<%= image_path('demo/05cea7c294cdda1708708c8ea87e2dac.jpg') %>)">
           </div>
         </div> 
         <div class="item">
-          <div class="image" style="background-image:url(/assets/demo/05cea7c294cdda1708708c8ea87e2dac.jpg)">
+          <div class="image" style="background-image:url(<%= image_path('demo/238118e9dfa790712af9749c56c8ea16.jpg') %>)">
           </div>
         </div> 
         <div class="item">
-          <div class="image" style="background-image:url(/assets/demo/105174_l_85.jpg)">
+          <div class="image" style="background-image:url(<%= image_path('demo/105174_l_85.jpg') %>)">
           </div>
         </div>  
       </div>
@@ -73,23 +74,23 @@
       <h4 class="ui inverted black block header">Latest Wyshers</h4>
       <div class="ui items latest-wyshers">
         <div class="item">
-          <div class="image" style="background-image:url(/assets/demo/ivan.jpg)">
+          <div class="image" style="background-image:url(<%= image_path('demo/ivan.jpg') %>)">
           </div>
         </div> 
         <div class="item">
-          <div class="image" style="background-image:url(/assets/demo/yaron.jpg)">
+          <div class="image" style="background-image:url(<%= image_path('demo/yaron.jpg') %>)">
           </div>
         </div> 
         <div class="item">
-          <div class="image" style="background-image:url(/assets/demo/yury.jpg)">
+          <div class="image" style="background-image:url(<%= image_path('demo/yury.jpg') %>)">
           </div>
         </div> 
         <div class="item">
-          <div class="image" style="background-image:url(/assets/demo/chad.png)">
+          <div class="image" style="background-image:url(<%= image_path('demo/chad.png') %>)">
           </div>
         </div> 
         <div class="item">
-          <div class="image" style="background-image:url(/assets/demo/andy.jpg)">
+          <div class="image" style="background-image:url(<%= image_path('demo/andy.jpg') %>)">
           </div>
         </div>  
       </div>
@@ -179,7 +180,7 @@
           <button class="ui basic close button"><i class="remove icon"></i></button>
           
           <div class="image">
-            <img src="/assets/demo/05cea7c294cdda1708708c8ea87e2dac.jpg">
+            <%= image_tag('demo/05cea7c294cdda1708708c8ea87e2dac.jpg') %>
           </div>
 
           <div class="content">
@@ -215,13 +216,13 @@
               <div class="related-list">
                 <h3>Related Items</h3>
                 <a href="#">
-                  <img alt="Nextime old fashioned turntable clock" src="/assets/demo/Nextime-Old-fashioned-Turntable-Clock.jpg">
+                  <%= image_tag('demo/Nextime-Old-fashioned-Turntable-Clock.jpg') %>
                 </a>
                 <a href="#">
-                  <img alt="238118e9dfa790712af9749c56c8ea16" src="/assets/demo/238118e9dfa790712af9749c56c8ea16.jpg">
+                  <%= image_tag('demo/238118e9dfa790712af9749c56c8ea16.jpg') %>
                 </a>
                 <a href="#">
-                  <img alt="105174 l 85" src="/assets/demo/105174_l_85.jpg">
+                  <%= image_tag('demo/105174_l_85.jpg') %>
                 </a>
               </div>                
             </div>
