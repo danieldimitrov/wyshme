@@ -1,3 +1,21 @@
 // Place all the styles related to the account controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#account-content {
+  .ui.facebook.button,
+  .ui.twitter.button,
+  .ui.google.plus.button,
+  .ui.regular-mail.button {
+    width: 20em;
+
+    > .icon {
+      float: left;
+    }
+  }
+}
+
+.ui.menu .purple.active.item,
+.ui.purple.menu .active.item {
+  border-color: #A14A9C !important;
+  color: #A14A9C !important;
+}

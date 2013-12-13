@@ -232,7 +232,13 @@ body {
   }
 
   #account-sidebar {
-    margin-top: 44px !important;
+    margin-top: 50px !important;
+
+    -webkit-transition: none;
+    -moz-transition:    none;
+    -ms-transition:     none;
+    transition:         none;
+    
   }
 
   #user-details {

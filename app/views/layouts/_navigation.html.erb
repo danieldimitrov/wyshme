@@ -21,8 +21,8 @@
         <%= image_tag('demo/ivan.jpg', width: '24') %>
         <span>{{auth.user.email}}</span>
         <div class="menu">
-          <div class="item">Edit Profile</div>
-          <div class="item">Logout</div>
+          <a href="/account" class="item">Edit Profile</a>
+          <a href="/logout" class="item">Logout</a>
         </div>
       </div>
       <div class="item" ng-hide="auth.isLoggedIn()">
