@@ -110,7 +110,7 @@
   <br>
 
   <div id="wysh-list" class="ui items">
-    <div class="item" ng-repeat="item in items">
+    <div class="item" ng-repeat="item in items" ng-show="itemMatchsCategory(item)">
       <div class="image">
         <img src="{{item.image_url}}">
       </div>

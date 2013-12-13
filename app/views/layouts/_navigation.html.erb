@@ -5,13 +5,16 @@
       <a href="/"><%= image_tag('logo.png', height: '20') %></a>
     </div>
     <div class="left menu">
-      <div class="ui section dropdown item" ng-controller="CategoriesCtrl">
+      <div id="header_categories_dropdown" class="ui section dropdown item" ng-controller="CategoriesCtrl">
         <input type="hidden" name="category">
         <div class="text">Browse Categories</div>
         <i class="dropdown icon"></i>
         <div class="menu">
-          <!-- <div class="item active" data-value="0">Anything</div> -->
-          <div class="item active" data-value="{{cat.id}}" ng-repeat="cat in categories">{{cat.name}}</div>
+          <div class="item active" ng-click="selectCategory(null);">Anything</div>
+          <div class="item" ng-repeat="cat in categories"
+               data-value="{{cat.id}}" ng-click="selectCategory(cat.id);">
+            {{cat.name}}
+          </div>
         </div>
       </div>
     </div>

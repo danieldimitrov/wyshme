@@ -31,7 +31,12 @@ $(document).click(function(e) {
 });
 
 $(function() {
-  $('.ui.dropdown').dropdown();
+  $('#header_categories_dropdown').on('click', function () {
+    //$(this).preventDefault();
+    $elem = $(this);
+    $elem.dropdown();
+    $elem.dropdown('toggle');
+  });
   $('.ui.checkbox').checkbox();
   $('.tooltip').popup();
 
