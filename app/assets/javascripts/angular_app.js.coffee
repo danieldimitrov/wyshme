@@ -1,4 +1,4 @@
-window.App = angular.module('WyshMe', ['ngResource', 'ngCookies'])
+window.App = angular.module('WyshMe', ['ngResource', 'ngCookies', 'akoenig.deckgrid'])
 
 App.config ['$httpProvider', ($httpProvider) ->
   $httpProvider.defaults.useXDomain = true;
