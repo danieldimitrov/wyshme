@@ -1,0 +1,35 @@
+<div id="login-modal" class="ui modal">
+  <i class="close icon"></i>
+
+  <div class="header">
+    <span>Login</span>
+  </div>
+  <div class="content">
+    <div class="ui form">
+      <div class="field">
+        <label>Email</label>
+        <div class="ui left labeled icon input">
+          <input name="user[email]" type="text" required
+          placeholder="Your email" ng-model="loginData.user.email">
+          <i class="user icon"></i>
+          <div class="ui corner label">
+            <i class="icon asterisk"></i>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <div class="ui left labeled icon input">
+          <input name="user[password]" type="password" required
+          placeholder="Your password" ng-model="loginData.user.password">
+          <i class="lock icon"></i>
+          <div class="ui corner label">
+            <i class="icon asterisk"></i>
+          </div>
+        </div>
+      </div>
+      <div class="ui error message"></div>
+    </div>
+    <button class="ui blue submit button" ng-click="login()">Login</button>
+  </div>
+</div>
