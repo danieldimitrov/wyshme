@@ -1,6 +1,3 @@
-<div deckgrid source="items" cardTemplate="/templates/deckgrid_card" class="deckgrid"></div>
-
-
 <div ng-controller="AuthCtrl" ng-hide="auth.isLoggedIn()">
   <div class="ui two column stackable page grid">
     <h3 class="welcome-text">WyshMe makes it easy to send the perfect gift to your friends and family on their special events, and helps you receive the gifts you really want!</h3> 
@@ -183,6 +180,11 @@
   <br>
   <h1 style="text-align: center;">All Items</h1>
   <br>
+  
+  <div deckgrid source="items" cardTemplate="/templates/deckgrid_card" class="deckgrid"></div>
+
+
+
 
   <div id="wysh-list" class="ui items" bn-delegate=".item .name a | selectItem(item)">
     <div class="item" ng-repeat="item in items" ng-show="itemMatchsCategory(item)">
