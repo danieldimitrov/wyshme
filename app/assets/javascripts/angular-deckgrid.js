@@ -58,7 +58,6 @@ angular.module('akoenig.deckgrid').factory('DeckgridDescriptor', [
                                 '<div data-ng-repeat="card in column" data-ng-include="cardTemplate"' +
                                     ' class="{{layout.classListItem}}"' +
                                     // TODO: pass directives below via deckgrid or somehow like that
-                                    ' ng-show="mother.itemMatchsCategory(card)"' +
                                     ' bn-delegate=".name a | mother.selectItem(card)"></div>' +
                             '</div>';
 

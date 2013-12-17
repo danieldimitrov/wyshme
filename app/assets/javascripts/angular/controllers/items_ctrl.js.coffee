@@ -1,25 +1,19 @@
-App.controller 'ItemsCtrl', ['$scope', 'Item', ($scope, Item) ->
+App.controller 'ItemsCtrl', ['$scope', '$filter', 'Item', ($scope, $filter, Item) ->
+  $scope.categorizedItems = []
   $scope.selectedCategoryId = null
+  $scope.selectedItem = null
 
   $scope.$on 'categoryChanged', (event, args) ->
     $scope.selectedCategoryId = args.category_id
-
-  $scope.itemMatchsCategory = (item) ->
-    matchs = false
-    if not $scope.selectedCategoryId? or item.categories.length == 0
-      matchs = true
-    else
-      angular.forEach item.categories, (category) ->
-        matchs = true if category.id == $scope.selectedCategoryId
-
-    matchs
+    $scope.categorizedItems =
+      $filter('categorizeItems')($scope.items, args.category_id)
 
   $scope.selectItem = (item) ->
     $scope.selectedItem = item
 
-  $scope.items = Item.query()
+  $scope.items = Item.query null, (items) ->
+    $scope.categorizedItems = $filter('categorizeItems')(items, $scope.selectedCategoryId)
 
-  $scope.selectedItem = null
 ]
 
 App.directive "bnDelegate", ($parse) ->
