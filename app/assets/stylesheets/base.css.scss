@@ -59,8 +59,10 @@ body {
     > .item {
       cursor: default;
 
-      .image, .name {
+      .name, .name a {
         cursor: pointer;
+        color: inherit;
+        text-decoration: none;
       }
       .name:hover {
         text-decoration: underline;

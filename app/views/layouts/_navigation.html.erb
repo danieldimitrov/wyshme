@@ -4,213 +4,29 @@
     <div id="logo" class="left item">
       <a href="/"><%= image_tag('logo.png', height: '20') %></a>
     </div>
+
     <div class="left menu">
-      <div id="header_categories_dropdown" class="ui section dropdown item" ng-controller="CategoriesCtrl">
-        <input type="hidden" name="category">
-        <div class="text">Browse Categories</div>
-        <i class="dropdown icon"></i>
-        <div class="menu">
-          <div class="item active" ng-click="selectCategory(null);">Anything</div>
-          <div class="item" ng-repeat="cat in categories"
-               data-value="{{cat.id}}" ng-click="selectCategory(cat.id);">
-            {{cat.name}}
-          </div>
-        </div>
-      </div>
+      <%= render partial: 'layouts/nav_partials/category_dropdown'%>
     </div>
 
     <div class="right menu" ng-controller="AuthCtrl">
-      <div id="user-details"  class="ui section dropdown item" ng-show="auth.isLoggedIn()">
-        <%= image_tag('demo/ivan.jpg', width: '24') %>
-        <span>{{auth.user.email}}</span>
-        <div class="menu">
-          <a href="/account" class="item">Edit Profile</a>
-          <a href="/logout" class="item">Logout</a>
-        </div>
-      </div>
+      <%= render partial: 'layouts/nav_partials/logged_in'%>
       <div class="item" ng-hide="auth.isLoggedIn()">
         <div>
           <a href="#" class="login-toggler">Login</a>
           or <a href="#" class="register-toggler">Register</a>
         </div>
-        <div id="login-modal" class="ui modal">
-          <i class="close icon"></i>
+        <%= render partial: 'layouts/nav_partials/login_modal' %>
 
-          <div class="header">
-            <span>Login</span>
-          </div>
-          <div class="content">
-            <div class="ui form">
-              <div class="field">
-                <label>Email</label>
-                <div class="ui left labeled icon input">
-                  <input name="user[email]" type="text" required
-                         placeholder="Your email" ng-model="loginData.user.email">
-                  <i class="user icon"></i>
-                  <div class="ui corner label">
-                    <i class="icon asterisk"></i>
-                  </div>
-                </div>
-              </div>
-              <div class="field">
-                <label>Password</label>
-                <div class="ui left labeled icon input">
-                  <input name="user[password]" type="password" required
-                         placeholder="Your password" ng-model="loginData.user.password">
-                  <i class="lock icon"></i>
-                  <div class="ui corner label">
-                    <i class="icon asterisk"></i>
-                  </div>
-                </div>
-              </div>
-              <div class="ui error message"></div>
-            </div>
-            <button class="ui blue submit button" ng-click="login()">Login</button>
-          </div>
-        </div>
-      </div>
-
-      <div id="register-modal" class="ui modal">
-        <i class="close icon"></i>
-
-        <div class="header">
-          <span>Register</span>
-        </div>
-        <div class="content">
-          <div class="ui form">
-            <div class="field">
-              <label>Email</label>
-              <div class="ui left labeled icon input">
-                <input name="user[email]" type="text" required
-                       placeholder="Your email"
-                       ng-model="registrationData.user.email">
-                <i class="user icon"></i>
-                <div class="ui corner label">
-                  <i class="icon asterisk"></i>
-                </div>
-              </div>
-            </div>
-            <div class="field">
-              <label>Password</label>
-              <div class="ui left labeled icon input">
-                <input name="user[password]" type="password"
-                       placeholder="Your password"
-                       ng-model="registrationData.user.password">
-                <i class="lock icon"></i>
-                <div class="ui corner label">
-                  <i class="icon asterisk"></i>
-                </div>
-              </div>
-            </div>
-            <div class="field">
-              <label>Password confirmation</label>
-              <div class="ui left labeled icon input">
-                <input name="user[password_confirmation]" type="password"
-                       placeholder="Retype your password"
-                       ng-model="registrationData.user.password_confirmation">
-                <i class="lock icon"></i>
-                <div class="ui corner label">
-                  <i class="icon asterisk"></i>
-                </div>
-              </div>
-            </div>
-            <br>
-            <button class="ui blue submit button" ng-click="register()">Register</button>
-            <div class="ui error message"></div>
-          </div>
-        </div>
+        <%= render partial: 'layouts/nav_partials/registration_modal' %>
       </div>
 
       <div class="item icon" ng-show="auth.isLoggedIn()">
-        <a href="#" id="wysh-list-toggler" class="tooltip" data-content="Your Wysh Lists">
-          <i class="unordered list icon"></i>
-        </a>
-        
-        <div id="wysh-list-brief" class="ui segment">
-          <h3 class="ui dividing purple header">
-            <i class="unordered list icon"></i> 
-            Your Wysh Lists 
-          </h3>
-          <a href="#" class="new-wysh-list ui green tooltip" data-content="Create New List"><i class="add icon"></i></a>
-          <h4 class="ui header">My List #1</h4>
-          <div class="ui celled list">
-            <div class="item">
-              <%= image_tag("demo/Nextime-Old-fashioned-Turntable-Clock.jpg", :class => 'ui avatar image') %>
-              <div class="content">
-                <div class="header">Nextime Old-fashioned Turntable Clock</div>
-                $88.61
-              </div>
-            </div>
-            <div class="item">
-              <%= image_tag("demo/238118e9dfa790712af9749c56c8ea16.jpg", :class => 'ui avatar image') %>
-              <div class="content">
-                <div class="header">As Tune As Possible Bag</div>
-                $57.99
-              </div>
-            </div>
-          </div> 
-        </div>
-
-        <div id="new-wysh-list-modal" class="ui modal" ng-controller="CategoriesCtrl">
-          <i class="close icon"></i>
-
-          <div class="header">
-            Add new Wysh list
-          </div>
-          <div class="content">
-            <div class="ui form">
-              <div class="field">
-                <label>Name</label>
-                <div class="ui left input">
-                  <input type="text" name="name" placeholder="">
-                </div>
-              </div>
-              <div class="field">
-                <label>Date</label>
-                <div class="ui left input">
-                  <input type="text" name="date">
-                </div>
-              </div>
-              <div class="field">
-                <label>Description</label>
-                <div class="ui left input">
-                  <textarea name="description"></textarea>
-                </div>
-              </div>
-
-              <button class="ui blue submit button">Create</button>
-              <div class="ui error message"></div>
-            </div>
-          </div>
-        </div>
+        <%= render partial: 'layouts/nav_partials/wysh_lists' %>
       </div>
 
       <div class="item icon" ng-show="auth.isLoggedIn()">
-        <a href="#" class="wysh-via-url tooltip" data-content="Add New Wysh via URL">
-          <i class="add icon"></i>
-        </a>
-
-        <div id="wysh-via-url-modal" class="ui modal" ng-controller="CategoriesCtrl">
-          <i class="close icon"></i>
-
-          <div class="header">
-            Add new Wysh from sites via URL
-          </div>
-          <div class="content">
-            <form class="ui form">
-              <div class="field">
-                <label>URL</label>
-                <div class="ui left input">
-                  <input type="text" placeholder="http://..." name="url">
-                </div>
-              </div>
-
-              <input type="submit" class="ui blue submit button" name="" value="Wysh">
-              <div class="ui error message"></div>
-            </form>
-          </div>
-        </div>
-
+        <%= render partial: 'layouts/nav_partials/add_wysh' %>
       </div>
 
       <div class="item">

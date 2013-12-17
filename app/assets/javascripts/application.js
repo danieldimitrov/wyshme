@@ -40,6 +40,7 @@ $(function() {
   });
   $('.ui.checkbox').checkbox();
   $('.tooltip').popup();
+  $('.ui.dropdown').dropdown();
 
   $('#register-modal.modal').modal('attach events', '.register-toggler', 'show');
   $('#login-modal.modal').modal('attach events', '.login-toggler', 'show');
@@ -60,15 +61,8 @@ $(function() {
 
   $('#account-sidebar.sidebar').sidebar({overlay: true}).sidebar('toggle');
 
-  $('#wysh-list .item:not(.active) .image, #wysh-list .item:not(.active) .name').on('click', function(event) {
-    event.preventDefault();
-    $('#selected-item').show();
-    $('#selected-item').dimmer('show');
-  });
-
   $('.active.item .close.button').on('click', function () {
     $('#selected-item').dimmer('hide');
-    $('#selected-item').hide();
   });
 
   // forms
