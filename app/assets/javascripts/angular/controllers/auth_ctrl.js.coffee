@@ -17,10 +17,10 @@ App.controller 'AuthCtrl', ['$scope', 'Auth', ($scope, Auth) ->
   $scope.registrationData = {}
 
   $scope.login = ->
-    Auth.login($scope.loginData, $scope.successAuth, $scope.errorAuth)
+    $scope.auth.login($scope.loginData, $scope.successAuth, $scope.errorAuth)
 
   $scope.register = ->
-    Auth.register($scope.registrationData, $scope.successAuth, $scope.errorAuth)
+    $scope.auth.register($scope.registrationData, $scope.successAuth, $scope.errorAuth)
 
   $scope.auth = Auth
 ]

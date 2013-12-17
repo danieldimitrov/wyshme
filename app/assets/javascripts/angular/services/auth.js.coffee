@@ -5,7 +5,7 @@ App.factory 'Auth', ($http, $rootScope, $cookieStore) ->
     $cookieStore.put('user', user)
     $.extend true, currentUser, user
 
-
+  # returns associative array below
   isLoggedIn: (user) ->
     if not user?
       user = currentUser
@@ -22,6 +22,7 @@ App.factory 'Auth', ($http, $rootScope, $cookieStore) ->
       changeUser(data)
       onSuccess(data)
     .error(onError)
+
   register: (registrationData, onSuccess, onError) ->
     $http
       url: 'http://wyshme-api.herokuapp.com/users.json'
@@ -33,5 +34,9 @@ App.factory 'Auth', ($http, $rootScope, $cookieStore) ->
       changeUser(data)
       onSuccess(data)
     .error(onError)
+
+  logout: ->
+    $cookieStore.remove('user')
+    currentUser = { email: '', access_token: '' }
 
   user: currentUser

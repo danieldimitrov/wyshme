@@ -104,12 +104,10 @@
 </div>
 
 
-
 <div ng-controller="AuthCtrl" ng-show="auth.isLoggedIn()">
   <div id="selected-item" ng-show="selectedItem">
     <div class="ui inverted dimmer">
       <div class="" style="position:fixed;width: 100%;">
-
 
         <div class="ui text loader">Loading</div>
         <div class="center ui items">
@@ -171,73 +169,13 @@
             </div>
           </div>
         </div>
-
-
       </div>
     </div>
   </div>
-  
-  <br>
-  <h1 style="text-align: center;">All Items</h1>
-  <br>
-
-  <div id="wysh-list" class="ui items" bn-delegate=".item .name a | selectItem(item)">
-    <div class="item" ng-repeat="item in items" ng-show="itemMatchsCategory(item)">
-      <div class="image">
-        <img src="{{item.image_url}}">
-      </div>
-      <div class="content">
-        <div class="ui buttons actions">
-          <button class="ui wysh-color-1 button"><i class="like icon"></i></button>
-          <div class="ui label">{{item.wyshes}} Wyshes</div>
-          <button class="ui wysh-color-2 like button"><i class="thumbs up outline icon"></i></button>
-          <div class="ui label">{{item.likes}} Likes</div>
-          <button class="ui basic close button">close</button>
-        </div>
-        <h2 class="name"><a href="#">{{item.name}}</a></h2>
-        <p class="price">${{item.price}}</p>
-        <p class="description">{{item.description}}</p>
-
-        <div class="extended-content">
-          <div class="ui section divider"></div>
-
-          <div class="wyshed-by-list">
-            <h3>Wyshed by</h3>
-            <a href="#" class="circular ui small icon button">
-              <i class="icon user"></i>
-            </a>
-            <a href="#" class="circular ui small icon button">
-              <i class="icon user"></i>
-            </a>
-            <a href="#" class="circular ui small icon button">
-              <i class="icon user"></i>
-            </a>
-            <a href="#" class="circular ui small icon button">
-              <i class="icon user"></i>
-            </a>
-          </div>
-
-          <div class="related-list">
-            <h3>Related Items</h3>
-            <a href="#">
-              <%= image_tag("demo/Nextime-Old-fashioned-Turntable-Clock.jpg") %>
-            </a>
-            <a href="#">
-              <%= image_tag("demo/238118e9dfa790712af9749c56c8ea16.jpg") %>
-            </a>
-            <a href="#">
-              <%= image_tag("demo/105174_l_85.jpg") %>
-            </a>
-          </div>                
-        </div>
-
-        <div class="extra">
-          <span class="wyshes-count left floated">{{item.wyshes}} Wyshes</span>
-          <span class="likes-count right floated">{{item.likes}} Likes</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  
 </div>
+
+<br>
+<h1 style="text-align: center;">All Items</h1>
+<br>
+
+<div deckgrid source="categorizedItems" cardTemplate="/templates/deckgrid_card" class="deckgrid clearfix"></div>

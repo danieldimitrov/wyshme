@@ -25,6 +25,7 @@
 //= require plugins
 //= require boards
 //= require account
+//= require angular-deckgrid
 
 $(document).click(function(e) {
   $('#new-wysh-modal .wysh-category').removeClass('active');
