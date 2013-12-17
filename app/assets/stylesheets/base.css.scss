@@ -59,6 +59,11 @@ body {
     > .item {
       cursor: default;
 
+      h2 {
+        font-size: 1.5rem;
+        line-height: 1.1em;
+      }
+
       .name, .name a {
         cursor: pointer;
         color: inherit;
