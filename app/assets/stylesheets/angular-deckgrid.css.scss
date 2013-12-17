@@ -24,7 +24,7 @@
 }
 
 .deckgrid[deckgrid]::before {
-    content: '5 .column.size-1-5.ui.items';
+    content: '5 .column.size-1-5.ui.items .item';
     display:none;
 }
 
@@ -68,7 +68,7 @@
     }
 
     .deckgrid[deckgrid]::before {
-        content: '4 .column.size-1-4.ui.items';
+        content: '4 .column.size-1-4.ui.items .item';
     }
 }
 
@@ -78,7 +78,7 @@
     }
 
     .deckgrid[deckgrid]::before {
-        content: '3 .column.size-1-3.ui.items';
+        content: '3 .column.size-1-3.ui.items .item';
     }
 }
 
@@ -90,7 +90,7 @@
     }
 
     .deckgrid[deckgrid]::before {
-        content: '2 .column.size-1-2.ui.items';
+        content: '2 .column.size-1-2.ui.items .item';
     }
 }
 
@@ -109,10 +109,9 @@
     }
 
     .deckgrid[deckgrid]::before {
-        content: '1 .column.size-1-1.ui.items';
+        content: '1 .column.size-1-1.ui.items .item';
     }
 }
-
 
 .clearfix {
   clear : both;

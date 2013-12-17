@@ -1,55 +1,53 @@
-    <div class="image">
-      <img src="" data-ng-src="{{card.image_url}}">
-    </div>
-    <div class="content">
-    <div class="content">
-      <div class="ui buttons actions">
-        <button class="ui wysh-color-1 button"><i class="like icon"></i></button>
-        <div class="ui label">{{card.wyshes}} Wyshes</div>
-        <button class="ui wysh-color-2 like button"><i class="thumbs up outline icon"></i></button>
-        <div class="ui label">{{card.likes}} Likes</div>
-        <button class="ui basic close button">close</button>
-      </div>
-      <h2 class="name"><a href="#">{{card.name}}</a></h2>
-      <p class="price">${{card.price}}</p>
-      <p class="description">{{card.description}}</p>
+<div class="image">
+  <img src="" data-ng-src="{{card.image_url}}">
+</div>
+<div class="content">
+  <div class="ui buttons actions">
+    <button class="ui wysh-color-1 button"><i class="like icon"></i></button>
+    <div class="ui label">{{card.wyshes}} Wyshes</div>
+    <button class="ui wysh-color-2 like button"><i class="thumbs up outline icon"></i></button>
+    <div class="ui label">{{card.likes}} Likes</div>
+    <button class="ui basic close button">close</button>
+  </div>
+  <h2 class="name"><a href="#">{{card.name}}</a></h2>
+  <p class="price">${{card.price}}</p>
+  <p class="description">{{card.description}}</p>
 
-      <div class="extended-content">
-        <div class="ui section divider"></div>
+  <div class="extended-content">
+    <div class="ui section divider"></div>
 
-        <div class="wyshed-by-list">
-          <h3>Wyshed by</h3>
-          <a href="#" class="circular ui small icon button">
-            <i class="icon user"></i>
-          </a>
-          <a href="#" class="circular ui small icon button">
-            <i class="icon user"></i>
-          </a>
-          <a href="#" class="circular ui small icon button">
-            <i class="icon user"></i>
-          </a>
-          <a href="#" class="circular ui small icon button">
-            <i class="icon user"></i>
-          </a>
-        </div>
-
-        <div class="related-list">
-          <h3>Related Items</h3>
-          <a href="#">
-            <%= image_tag("demo/Nextime-Old-fashioned-Turntable-Clock.jpg") %>
-          </a>
-          <a href="#">
-            <%= image_tag("demo/238118e9dfa790712af9749c56c8ea16.jpg") %>
-          </a>
-          <a href="#">
-            <%= image_tag("demo/105174_l_85.jpg") %>
-          </a>
-        </div>                
-      </div>
-
-      <div class="extra">
-        <span class="wyshes-count left floated">{{card.wyshes}} Wyshes</span>
-        <span class="likes-count right floated">{{card.likes}} Likes</span>
-      </div>
+    <div class="wyshed-by-list">
+      <h3>Wyshed by</h3>
+      <a href="#" class="circular ui small icon button">
+        <i class="icon user"></i>
+      </a>
+      <a href="#" class="circular ui small icon button">
+        <i class="icon user"></i>
+      </a>
+      <a href="#" class="circular ui small icon button">
+        <i class="icon user"></i>
+      </a>
+      <a href="#" class="circular ui small icon button">
+        <i class="icon user"></i>
+      </a>
     </div>
 
+    <div class="related-list">
+      <h3>Related Items</h3>
+      <a href="#">
+        <%= image_tag("demo/Nextime-Old-fashioned-Turntable-Clock.jpg") %>
+      </a>
+      <a href="#">
+        <%= image_tag("demo/238118e9dfa790712af9749c56c8ea16.jpg") %>
+      </a>
+      <a href="#">
+        <%= image_tag("demo/105174_l_85.jpg") %>
+      </a>
+    </div>                
+  </div>
+
+  <div class="extra">
+    <span class="wyshes-count left floated">{{card.wyshes}} Wyshes</span>
+    <span class="likes-count right floated">{{card.likes}} Likes</span>
+  </div>
+</div>

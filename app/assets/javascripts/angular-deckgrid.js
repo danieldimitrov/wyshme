@@ -55,7 +55,11 @@ angular.module('akoenig.deckgrid').factory('DeckgridDescriptor', [
             this.restrict = 'AE';
 
             this.template = '<div data-ng-repeat="column in columns" class="{{layout.classList}}">' +
-                                '<div data-ng-repeat="card in column" data-ng-include="cardTemplate" class="item"></div>' +
+                                '<div data-ng-repeat="card in column" data-ng-include="cardTemplate"' +
+                                    ' class="{{layout.classListItem}}"' +
+                                    // TODO: pass directives below via deckgrid or somehow like that
+                                    ' ng-show="mother.itemMatchsCategory(card)"' +
+                                    ' bn-delegate=".name a | mother.selectItem(card)"></div>' +
                             '</div>';
 
             this.scope = {
@@ -289,10 +293,14 @@ angular.module('akoenig.deckgrid').factory('Deckgrid', [
                 content = content.replace(/"/g, '');  // before e.g. "3 .column.size-1of3"
                 content = content.split(' ');
 
-                if (2 === content.length) {
+                if (content.length > 1) {
                     layout = {};
                     layout.columns = (content[0] | 0);
                     layout.classList = content[1].replace(/\./g, ' ').trim();
+                    layout.classListItem = '';
+                    if (content.length > 2) {
+                        layout.classListItem = content[2].replace(/\./g, ' ').trim();
+                    }
                 }
             }
 
