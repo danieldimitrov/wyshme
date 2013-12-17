@@ -58,7 +58,7 @@
     }
 
     .deckgrid[deckgrid]::before {
-        content: '5 .column.size-1-5.ui.items';
+        content: '5 .column.size-1-5.ui.items .item';
     }
 }
 
@@ -112,6 +112,7 @@
         content: '1 .column.size-1-1.ui.items .item';
     }
 }
+
 
 .clearfix {
   clear : both;
