@@ -39,6 +39,7 @@ $(function() {
   });
   $('.ui.checkbox').checkbox();
   $('.tooltip').popup();
+  $('.ui.dropdown').dropdown();
 
   $('#register-modal.modal').modal('attach events', '.register-toggler', 'show');
   $('#login-modal.modal').modal('attach events', '.login-toggler', 'show');
