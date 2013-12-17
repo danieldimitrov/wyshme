@@ -180,13 +180,13 @@
   <br>
   <h1 style="text-align: center;">All Items</h1>
   <br>
-  
-  <div deckgrid source="items" cardTemplate="/templates/deckgrid_card" class="deckgrid"></div>
+
+  <div id="wysh-list" deckgrid source="items" cardTemplate="/templates/deckgrid_card" class="deckgrid clearfix" bn-delegate=".item .name a | selectItem(item)"></div>
 
 
+<!-- 
 
-
-  <div id="wysh-list" class="ui items" bn-delegate=".item .name a | selectItem(item)">
+  <div class="ui items" bn-delegate=".item .name a | selectItem(item)">
     <div class="item" ng-repeat="item in items" ng-show="itemMatchsCategory(item)">
       <div class="image">
         <img src="{{item.image_url}}">
@@ -245,4 +245,4 @@
 
   </div>
   
-</div>
+</div> -->
