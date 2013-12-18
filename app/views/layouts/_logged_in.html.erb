@@ -1,9 +1,0 @@
-<div id="user-details"  class="ui section dropdown item" ng-show="auth.isLoggedIn()">
-  <%= image_tag('demo/ivan.jpg', width: '24') %>
-  <span>{{auth.user.email}}</span>
-  <i class="dropdown icon"></i>
-  <div class="menu">
-    <a href="/account" class="item">Edit Profile</a>
-    <a href="/logout" class="item" ng-click="logout">Logout</a>
-  </div>
-</div>
