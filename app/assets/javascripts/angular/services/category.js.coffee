@@ -1,4 +1,4 @@
-App.factory 'Category', ['$resource', ($resource) ->
+App.factory 'Category', ['$resource', 'API_HOST', ($resource, API_HOST) ->
   # TODO: Place root API's URL to configuration
-  $resource 'http://wyshme-api.herokuapp.com/api/categories/:id', id: '@id'
+  $resource "#{API_HOST}/api/categories/:id", id: '@id'
 ]

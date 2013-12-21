@@ -1,4 +1,4 @@
-App.factory 'Auth', ($http, $rootScope, $cookieStore) ->
+App.factory 'Auth', ($http, $rootScope, $cookieStore, API_HOST) ->
   currentUser = $cookieStore.get('user') or { email: '', access_token: '' }
 
   changeUser = (user) ->
@@ -13,7 +13,7 @@ App.factory 'Auth', ($http, $rootScope, $cookieStore) ->
 
   login: (loginData, onSuccess, onError) ->
     $http
-      url: 'http://wyshme-api.herokuapp.com/users/sign_in.json'
+      url: "#{API_HOST}/users/sign_in.json"
       method: 'POST'
       headers:
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -25,7 +25,7 @@ App.factory 'Auth', ($http, $rootScope, $cookieStore) ->
 
   register: (registrationData, onSuccess, onError) ->
     $http
-      url: 'http://wyshme-api.herokuapp.com/users.json'
+      url: "#{API_HOST}/users.json"
       method: 'POST'
       headers:
         'Content-Type': 'application/x-www-form-urlencoded'

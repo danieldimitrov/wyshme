@@ -7,17 +7,18 @@ App.config ['$httpProvider', ($httpProvider) ->
 
 App.filter 'categorizeItems', ->
   (items, categoryId) ->
-    return items if not categoryId?
-
     categorized = []
     angular.forEach items, (item) ->
-      if item.categories.length == 0
+      if item.categories.length == 0 or not categoryId?
         categorized.push item
       else
         angular.forEach item.categories, (category) ->
           categorized.push(item) if category.id == categoryId
 
     categorized
+
+App.constant 'API_HOST', 'http://wyshme-api.herokuapp.com'
+# App.constant 'API_HOST', 'http://localhost:2999'
 
 App.run ($rootScope) ->
   $rootScope.$on 'categoryChangeEmit', (event, args) ->
