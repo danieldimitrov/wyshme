@@ -1,6 +1,4 @@
-$bgColor:       #eeeeee !default;
-$primary:       #4db748 !default;
-$secondary:     #5c3293 !default;
+@import "variables";
 
 body {
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -318,12 +316,15 @@ body {
     display: block;
     margin: 1em auto 0em;
     width: 18em;
+    max-width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
   }
 
   .welcome-text {
     text-align: center;
     line-height: 1.5em;
-    color: #A14A9C;
+    color: $secondary;
   }
 } 
 

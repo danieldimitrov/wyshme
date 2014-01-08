@@ -1,3 +1,5 @@
+@import "variables";
+
 // Place all the styles related to the account controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
@@ -16,6 +18,6 @@
 
 .ui.menu .purple.active.item,
 .ui.purple.menu .active.item {
-  border-color: #A14A9C !important;
-  color: #A14A9C !important;
+  border-color: $secondary !important;
+  color: $secondary !important;
 }
