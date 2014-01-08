@@ -1,61 +1,13 @@
-<a href="#" id="wysh-list-toggler" class="tooltip" data-content="Your Wysh Lists">
-  <i class="unordered list icon"></i>
-</a>
+<div class="ui dropdown icon item">
+	<div data-content="Your Wysh Lists">
+		<span> Wysh List </span>
+    <i class="triangle down icon"></i>
+	</div>
 
-<div id="wysh-list-brief" class="ui segment">
-  <h3 class="ui dividing purple header">
-    <i class="unordered list icon"></i> 
-    Your Wysh Lists 
-  </h3>
-  <a href="#" class="new-wysh-list ui green tooltip" data-content="Create New List"><i class="add icon"></i></a>
-  <h4 class="ui header">My List #1</h4>
-  <div class="ui celled list">
-    <div class="item">
-      <%= image_tag("demo/Nextime-Old-fashioned-Turntable-Clock.jpg", :class => 'ui avatar image') %>
-      <div class="content">
-        <div class="header">Nextime Old-fashioned Turntable Clock</div>
-        $88.61
-      </div>
-    </div>
-    <div class="item">
-      <%= image_tag("demo/238118e9dfa790712af9749c56c8ea16.jpg", :class => 'ui avatar image') %>
-      <div class="content">
-        <div class="header">As Tune As Possible Bag</div>
-        $57.99
-      </div>
-    </div>
-  </div> 
-</div>
-
-<div id="new-wysh-list-modal" class="ui modal" ng-controller="CategoriesCtrl">
-  <i class="close icon"></i>
-
-  <div class="header">
-    Add new Wysh list
-  </div>
-  <div class="content">
-    <div class="ui form">
-      <div class="field">
-        <label>Name</label>
-        <div class="ui left input">
-          <input type="text" name="name" placeholder="">
-        </div>
-      </div>
-      <div class="field">
-        <label>Date</label>
-        <div class="ui left input">
-          <input type="text" name="date">
-        </div>
-      </div>
-      <div class="field">
-        <label>Description</label>
-        <div class="ui left input">
-          <textarea name="description"></textarea>
-        </div>
-      </div>
-
-      <button class="ui blue submit button">Create</button>
-      <div class="ui error message"></div>
-    </div>
-  </div>
+	<div class="menu">
+		<a href="#" class="item">My Wysh List</a>
+		<a href="#" class="item">Shared with Me</a>
+		<a href="#" class="item">Search</a>
+		<a href="#" class="item">Suggested</a>
+	</div>
 </div>

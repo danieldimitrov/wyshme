@@ -1,40 +1,11 @@
-<i class="add icon"></i>
-
-<div class="menu">
-  <a href="#" class="new-event item">New Event</a>
-  <a href="#" class="wysh-via-url item">Wysh via URL</a>
-</div>
-
-
-<div id="wysh-via-url-modal" class="ui modal" ng-controller="CategoriesCtrl">
-  <i class="close icon"></i>
-
-  <div class="header">
-    Add new Wysh from sites via URL
-  </div>
-  <div class="content">
-    <form class="ui form">
-      <div class="field">
-        <label>URL</label>
-        <div class="ui left input">
-          <input type="text" placeholder="http://..." name="url">
-        </div>
-      </div>
-
-      <input type="submit" class="ui blue submit button" name="" value="Wysh">
-      <div class="ui error message"></div>
-    </form>
-  </div>
-</div>
-
-<div id="new-event-modal" class="ui modal">
+<div id="add-new-event-modal" class="ui modal" ng-controller="CategoriesCtrl">
   <i class="close icon"></i>
 
   <div class="header">
     <span>Add new event</span>
   </div>
   <div class="content">
-    <div class="ui form">
+    <form class="ui form">
       <div class="field">
         <label>Name</label>
         <div class="ui left labeled input">
@@ -71,4 +42,3 @@
     <button class="ui blue submit button">Create Event</button>
   </div>
 </div>
-
