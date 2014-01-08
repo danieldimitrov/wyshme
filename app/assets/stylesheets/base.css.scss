@@ -23,6 +23,7 @@ body {
     font-family: 'Chango', cursive;
     color: #5856D6;
     text-decoration: none;
+    padding: 0.7em 0.95em 0.4em;
   }
 
   #wysh-list-toggler {
@@ -276,7 +277,13 @@ body {
     
   }
 
+  .ui.menu .item {
+    padding: 0.85em 0.95em .75em;
+  }
+
   #user-details {
+    padding: 0.6em 0.95em .75em;
+
     img {
       float: left;
       margin-right: 10px;
