@@ -7,6 +7,14 @@
 
     <div class="left menu">
       <%= render partial: 'layouts/nav_partials/category_dropdown'%>
+
+      <div class="item">
+        <div class="ui icon input">
+          <input type="text" placeholder="Search...">
+          <i class="search link icon"></i>
+        </div>
+      </div>
+      
     </div>
 
     <div class="right menu" ng-controller="AuthCtrl">
@@ -29,12 +37,6 @@
         <%= render partial: 'layouts/nav_partials/add_wysh' %>
       </div>
 
-      <div class="item">
-        <div class="ui icon input">
-          <input type="text" placeholder="Search...">
-          <i class="search link icon"></i>
-        </div>
-      </div>
     </div>
   </div>
 </div>

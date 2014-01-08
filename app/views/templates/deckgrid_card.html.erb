@@ -16,8 +16,13 @@
     <button class="ui basic close button">close</button>
   </div>
   <h2 class="name"><a href="#">{{card.name}}</a></h2>
-  <p class="price">${{card.price}}</p>
-  <p class="description">{{card.description}}</p>
+  <div>
+    <div class="price left floated">${{card.price}}</div>
+    <div class="likes right floated">
+      <span class="wyshes-count"><i class="like icon"></i> {{card.wyshes}}</span>
+      <span class="likes-count"><i class="thumbs up icon"></i> {{card.likes}}</span>
+    </div>
+  </div>
 
   <div class="extended-content">
     <div class="ui section divider"></div>
@@ -52,8 +57,4 @@
     </div>                
   </div>
 
-  <div class="extra">
-    <span class="wyshes-count left floated">{{card.wyshes}} Wyshes</span>
-    <span class="likes-count right floated">{{card.likes}} Likes</span>
-  </div>
 </div>

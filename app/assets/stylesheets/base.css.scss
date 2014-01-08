@@ -1,6 +1,7 @@
 $bgColor:       #eeeeee !default;
 $primary:       #A14A9C !default;
 $secondary:     #4CD964 !default;
+
 body {
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
@@ -58,10 +59,37 @@ body {
   .ui.items {
     > .item {
       cursor: default;
+      border-radius: 0;
+      box-shadow: none;
 
       h2 {
-        font-size: 1.5rem;
-        line-height: 1.1em;
+        font-size: 1rem;
+        line-height: 1.5em;
+        font-weight: normal;
+        margin-bottom: 1em;
+      }
+
+      .price {
+        font-weight: bold;
+      }
+
+      .likes {
+        opacity: .4;
+        font-size: .75em;
+        line-height: 1.5em;
+        margin-right: -.5em;
+
+        .icon {
+          margin: 0;
+
+          &.like.icon {
+            font-size: .9em;
+          }
+        }
+
+        > span:first-child {
+          margin-right: .25em;
+        }
       }
 
       .name, .name a {
@@ -291,3 +319,17 @@ body {
     color: #A14A9C;
   }
 } 
+
+
+// Helpers
+// ------------------------------------------------------
+
+.left.floated {
+  float: left;
+}
+
+.right.floated {
+  float: right;
+}
+
+
