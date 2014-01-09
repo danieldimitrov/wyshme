@@ -4,6 +4,27 @@
     <div class="column">
       <div id="home-registration" class="ui form segment">
         <h4>Start adding your Wyshes right now!</h4>
+        <p style="margin: 1em 0 .5em;">Signup with one of your accounts:</p>
+
+        <div class="social buttons">
+            <div class="ui facebook button">
+              <i class="facebook icon"></i>
+              Facebook
+            </div>
+            <div class="ui twitter button">
+              <i class="twitter icon"></i>
+              Twitter
+            </div>
+            <div class="ui google plus button">
+              <i class="google plus icon"></i>
+              Google+
+            </div>
+        </div>    
+
+        <div class="ui clearing horizontal divider">
+          or
+        </div>
+
         <div class="field">
           <label>Email</label>
           <div class="ui left labeled icon input">
@@ -174,8 +195,10 @@
   </div>
 </div>
 
-<br>
-<h1 style="text-align: center;">All Items</h1>
-<br>
+<div ng-controller="AuthCtrl" ng-show="auth.isLoggedIn()">
+  <br>
+  <h1 style="text-align: center;">All Items</h1>
+  <br>
 
-<div deckgrid source="categorizedItems" cardTemplate="/templates/deckgrid_card" class="deckgrid clearfix"></div>
+  <div deckgrid source="categorizedItems" cardTemplate="/templates/deckgrid_card" class="deckgrid clearfix"></div>  
+</div>

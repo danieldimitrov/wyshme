@@ -1,0 +1,13 @@
+@media (max-width: 639px) {
+  .social.buttons {
+    .button, .ui.button {
+      float: none;
+      display: block;
+      width: 100%;
+      margin: 0 0 .5em;
+      padding: .8em .5em .8em;
+      text-align: center;
+    }
+
+  } 
+}

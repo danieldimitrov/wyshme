@@ -16,8 +16,45 @@
   }
 }
 
+.ui.twitter.button {
+  background: #55ACEE;
+}
+
 .ui.menu .purple.active.item,
 .ui.purple.menu .active.item {
   border-color: $secondary !important;
   color: $secondary !important;
 }
+
+.social.buttons {
+  min-height: 3em;
+
+  .button,
+  .ui.button {
+    font-size: 1rem;
+    float: left;
+    margin-right: 2%;
+    white-space: nowrap;
+    padding: 0.65em .5em .5em;
+    border-radius: 2px;
+    line-height: 1em;
+    font-weight: normal;
+    vertical-align: top;
+    text-transform: none;
+    text-align: left;
+    width: 32%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    > .icon {
+      font-size: 1.5em;
+      margin-top: -.15em;
+      float: left;
+      opacity: 1;
+    }
+  }
+} 
