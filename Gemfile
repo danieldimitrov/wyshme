@@ -24,7 +24,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
 gem 'modernizr_rails'
-gem 'semantic-ui-sass', '~> 0.9.5.0'
+gem 'semantic-ui-sass'
 
 gem 'angularjs-rails'
 

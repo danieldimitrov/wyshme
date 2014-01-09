@@ -129,5 +129,5 @@ DEPENDENCIES
   rails_12factor
   sass-rails (~> 4.0.0)
   sdoc
-  semantic-ui-sass (~> 0.9.5.0)
+  semantic-ui-sass
   sqlite3

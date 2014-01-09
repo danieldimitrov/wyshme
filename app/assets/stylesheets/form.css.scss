@@ -1,0 +1,111 @@
+@import "variables";
+
+#app {
+  
+  .ui.form {
+    .date.field .ui.labeled.input {
+      input {
+        padding-right: 2.5em !important;
+        padding-left: 1.2em !important;
+
+      }
+      .calendar.icon {
+        left: auto !important;
+        right: 10px !important;
+      }
+    } 
+  }
+
+  .picker {
+    color: $bodyTextColor;
+  }
+
+  .picker__header {
+    margin-top: .75em !important;
+  }
+
+  .picker__day {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .picker__day--highlighted:hover, 
+  .picker--focused .picker__day--highlighted {
+    background: $primary;
+    color: #FFF;
+  }
+
+  .picker__day--selected,
+  .picker__day--selected:hover {
+    border-color: $primary;
+  }
+  
+  .picker__day--today {
+    color: darken($primary, 20);
+  }
+
+  .picker__button--today:before,
+  .picker__day--today:before {
+    border-top: 0.5em solid darken($primary, 20);
+  }
+
+  .picker__day--infocus:hover, 
+  .picker__day--outfocus:hover {
+    background: transparentize($primary, .75);
+
+    &.picker__day--today.picker__day--selected {
+      color: inherit;
+    }
+  }
+
+  .picker__day--highlighted {
+    background: transparentize($primary, .75);
+  }
+
+  .picker__table {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .picker__nav--prev, .picker__nav--next {
+    padding: .5em 1em;
+    opacity: .8;
+    filter:alpha(opacity=80);
+
+    &:hover {
+      background: transparent;
+      opacity: 1;
+      filter:alpha(opacity=100);
+    }
+  }
+
+  .picker__footer {
+    margin-bottom: 10px;
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .picker__button--today:focus,
+  .picker__button--clear:focus,
+  .picker__button--today:hover,
+  .picker__button--clear:hover {
+    color: #222;
+    background: #EEE;
+    border-color: #eee;
+  }
+
+  @media (min-height: 40.125em) {
+    .picker__frame {
+      margin-bottom: 7.5% !important;
+    }
+  }
+
+  @media (min-height: 33.875em) {
+    .picker__wrap {
+      display: block;
+      width: 98%;
+      box-sizing: border-box;
+      margin-left: 1%;
+    }
+  }
+  
+}

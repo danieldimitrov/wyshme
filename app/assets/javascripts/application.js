@@ -21,6 +21,8 @@
 //= require angular-cookies
 //= require angular_app
 //= require_tree ./angular
+//= require ./plugins/picker
+//= require_tree ./plugins/
 
 //= require plugins
 //= require boards
@@ -38,6 +40,8 @@ $(function() {
     $elem.dropdown();
     $elem.dropdown('toggle');
   });
+  $('.datepicker').pickadate();
+
   $('.ui.checkbox').checkbox();
   $('.tooltip').popup();
   $('.ui.dropdown').dropdown();
@@ -46,6 +50,7 @@ $(function() {
   $('#login-modal.modal').modal('attach events', '.login-toggler', 'show');
   $('#new-wysh-list-modal.modal').modal('attach events', '.new-wysh-list', 'show');
   $('#wysh-via-url-modal.modal').modal('attach events', '.wysh-via-url', 'show');
+  $('#new-event-modal').modal('attach events', '.new-event', 'show');
 
   $('#wysh-list-toggler').on('click', function(event) {
     event.preventDefault();

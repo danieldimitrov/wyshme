@@ -1,6 +1,10 @@
-<a href="#" class="wysh-via-url tooltip" data-content="Add New Wysh via URL">
-  <i class="add icon"></i>
-</a>
+<i class="add icon"></i>
+
+<div class="menu">
+  <a href="#" class="new-event item">New Event</a>
+  <a href="#" class="wysh-via-url item">Wysh via URL</a>
+</div>
+
 
 <div id="wysh-via-url-modal" class="ui modal" ng-controller="CategoriesCtrl">
   <i class="close icon"></i>
@@ -22,3 +26,49 @@
     </form>
   </div>
 </div>
+
+<div id="new-event-modal" class="ui modal">
+  <i class="close icon"></i>
+
+  <div class="header">
+    <span>Add new event</span>
+  </div>
+  <div class="content">
+    <div class="ui form">
+      <div class="field">
+        <label>Name</label>
+        <div class="ui left labeled input">
+          <input name="event[name]" type="text" required
+          placeholder="Event name">
+          <div class="ui corner label">
+            <i class="icon asterisk"></i>
+          </div>
+        </div>
+      </div>
+      <div class="date field">
+        <label>Date</label>
+        <div class="ui left labeled icon input">
+          <input name="event[date]" type="text" required
+          placeholder="Event date" class="datepicker">
+          <i class="calendar icon right floated"></i>
+          <div class="ui corner label">
+            <i class="icon asterisk"></i>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <label>Description</label>
+        <div class="ui left labeled input">
+          <textarea name="event[description]" required
+          placeholder="Event description"></textarea>
+          <div class="ui corner label">
+            <i class="icon asterisk"></i>
+          </div>
+        </div>
+      </div>
+      <div class="ui error message"></div>
+    </div>
+    <button class="ui blue submit button">Create Event</button>
+  </div>
+</div>
+
