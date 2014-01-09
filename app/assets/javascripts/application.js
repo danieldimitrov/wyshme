@@ -25,7 +25,7 @@
 //= require_tree ./plugins/
 
 //= require plugins
-//= require boards
+//= require lists
 //= require account
 //= require angular-deckgrid
 
