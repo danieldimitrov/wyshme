@@ -140,21 +140,24 @@ body {
         }
 
         button {
-          padding: 0.4em 1em;
-          height: 3em;
-          width: 5em;
+          width: 48%;
+          margin-right: 4%;
+          color: #222;
+          padding: 0.5em 0;
+          border-radius: 5px;
+          text-align: center;
+          background: #444;
+          border: 3px solid rgba(0, 0, 0, 0.7);
+          background: #F8F8F8;
+
 
           &.like {
-            border-radius: 0 4px 4px 0;
+            margin: 0;
           }
 
           > .icon {
             font-size: 2em;
             margin: 0;
-
-            &.like {
-              font-size: 1.5em;
-            }
           }
 
           &.close {
@@ -179,9 +182,20 @@ body {
         }
       }
 
-      &:hover  {
+      &:not(.active):hover  {
         .ui.buttons.actions {
           display: block;
+        }
+        .image {
+          -webkit-transition: all .2s linear;
+          -moz-transition:    all .2s linear;
+          -ms-transition:     all .2s linear;
+          transition:         all .2s linear;
+          
+          -webkit-filter: blur(1px);
+          -moz-filter: blur(1px);
+          -ms-filter: blur(1px);
+          filter: blur(1px);
         }
       }
 

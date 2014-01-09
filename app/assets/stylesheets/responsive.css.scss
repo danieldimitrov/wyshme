@@ -11,3 +11,9 @@
 
   } 
 }
+
+@media only screen and (max-width: 768px) {
+  .ui.stackable.grid > .row > .column, .ui.stackable.grid > .column {
+    margin: 1.5em 0% 0em !important;
+  }
+}
