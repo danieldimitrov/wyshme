@@ -259,12 +259,15 @@ body {
           width: auto;
           margin: 1em 0 2em;
 
-          .like {
-            border-radius: 4px 0 0 4px;
+          button {
+            width: 100px;
+            margin: 0;
           }
 
           .ui.label { 
             display: inline-block;
+            height: 3.4em;
+            border: none;
           }
 
           .close {
