@@ -1,7 +1,8 @@
 Wyshme::Application.routes.draw do
 
-  resources :lists, only: [:index]
-  resources :items, only: [:index]
+  resources :events, only: [:index]
+  resources :lists,  only: [:index]
+  resources :items,  only: [:index]
 
   get 'templates(/:action)', controller: :templates
 
