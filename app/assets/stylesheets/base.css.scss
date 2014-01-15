@@ -11,6 +11,11 @@ body {
     padding: 1em;
     max-width: 1700px;
     margin: 0 auto;
+
+    h1 {
+      text-align: center;
+      margin: .5em 0 1em;
+    }
   }
 
   > .segment {
@@ -182,17 +187,6 @@ body {
         .ui.buttons.actions {
           display: block;
         }
-        .image {
-          -webkit-transition: all .2s linear;
-          -moz-transition:    all .2s linear;
-          -ms-transition:     all .2s linear;
-          transition:         all .2s linear;
-          
-          -webkit-filter: blur(1px);
-          -moz-filter: blur(1px);
-          -ms-filter: blur(1px);
-          filter: blur(1px);
-        }
       }
 
       .description {
@@ -268,6 +262,47 @@ body {
 
           .close {
             display: inline-block;
+          }
+        }
+      }
+    }
+
+    &.fullwidth {
+      margin: 0;
+
+      > .item {
+        width: 100%;
+        font-size: inherit;
+
+        > .image {
+          height: 400px;
+          overflow: hidden;
+
+          > img {
+            margin-top: -25%;
+          }
+        }
+      }
+    }
+
+    &.two-item {
+      margin: 0;
+
+      > .item {
+        width: 49%;
+        min-height: 200px;
+        margin: 0 2% 2% 0;
+
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+
+        > .image {
+          height: 120px;
+          overflow: hidden;
+
+          > img {
+            margin-top: -25%;
           }
         }
       }
