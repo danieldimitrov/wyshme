@@ -51,6 +51,7 @@ $(function() {
   $('#new-wysh-list-modal.modal').modal('attach events', '.new-wysh-list', 'show');
   $('#wysh-via-url-modal.modal').modal('attach events', '.wysh-via-url', 'show');
   $('#add-new-event-modal.modal').modal('attach events', '.add-new-event', 'show');
+  $('#create-alert-modal.modal').modal('attach events', '.create-alert', 'show');
 
   $(document).click(function() {
     $('#wysh-list-brief').hide();
