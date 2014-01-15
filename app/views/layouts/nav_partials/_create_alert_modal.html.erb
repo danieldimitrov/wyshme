@@ -1,0 +1,34 @@
+<div id="create-alert-modal" class="ui modal" ng-controller="CategoriesCtrl">
+  <i class="close icon"></i>
+
+  <div class="header">
+    <span>New Alert</span>
+  </div>
+  <div class="content">
+    <form class="ui form">
+      <div class="field">
+        <label>Reminder</label>
+        <div class="ui left labeled input">
+          <input name="alert[reminder]" type="text" required
+          placeholder="Alert reminder">
+          <div class="ui corner label">
+            <i class="icon asterisk"></i>
+          </div>
+        </div>
+      </div>
+      <div class="date field">
+        <label>Date</label>
+        <div class="ui left labeled icon input">
+          <input name="alert[date]" type="text" required
+          placeholder="Alert date" class="datepicker">
+          <i class="calendar icon right floated"></i>
+          <div class="ui corner label">
+            <i class="icon asterisk"></i>
+          </div>
+        </div>
+      </div>
+      <div class="ui error message"></div>
+    </div>
+    <button class="ui blue submit button">Create Alert</button>
+  </div>
+</div>

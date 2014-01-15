@@ -1,4 +1,3 @@
-
 <div class="ui fixed transparent main menu">
   <div class="container">
     <div id="logo" class="left item">
@@ -6,7 +5,7 @@
     </div>
 
     <div class="left menu">
-      <%= render partial: 'layouts/nav_partials/category_dropdown'%>
+      <%= render partial: 'layouts/nav_partials/catalog'%>
 
       <div class="item">
         <div class="ui icon input">
@@ -18,7 +17,16 @@
     </div>
 
     <div class="right menu" ng-controller="AuthCtrl">
+      <span ng-show="auth.isLoggedIn()">
+        <%= render partial: 'layouts/nav_partials/wysh_lists' %>
+
+        <%= render partial: 'layouts/nav_partials/events' %>
+
+        <%= render partial: 'layouts/nav_partials/peeps' %>
+      </span>
+
       <%= render partial: 'layouts/nav_partials/logged_in'%>
+
       <div class="item" ng-hide="auth.isLoggedIn()">
         <div>
           <a href="#" class="login-toggler">Login</a>
@@ -28,15 +36,10 @@
 
         <%= render partial: 'layouts/nav_partials/registration_modal' %>
       </div>
-
-      <div class="item icon" ng-show="auth.isLoggedIn()">
-        <%= render partial: 'layouts/nav_partials/wysh_lists' %>
-      </div>
-
-      <div class="item icon ui section dropdown" ng-show="auth.isLoggedIn()">
-        <%= render partial: 'layouts/nav_partials/add_wysh' %>
-      </div>
-
+      
+      <%= render partial: 'layouts/nav_partials/add_event_modal' %>
+      
+      <%= render partial: 'layouts/nav_partials/create_alert_modal' %>
     </div>
   </div>
 </div>

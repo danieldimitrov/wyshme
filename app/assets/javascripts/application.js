@@ -50,13 +50,9 @@ $(function() {
   $('#login-modal.modal').modal('attach events', '.login-toggler', 'show');
   $('#new-wysh-list-modal.modal').modal('attach events', '.new-wysh-list', 'show');
   $('#wysh-via-url-modal.modal').modal('attach events', '.wysh-via-url', 'show');
-  $('#new-event-modal').modal('attach events', '.new-event', 'show');
+  $('#add-new-event-modal.modal').modal('attach events', '.add-new-event', 'show');
+  $('#create-alert-modal.modal').modal('attach events', '.create-alert', 'show');
 
-  $('#wysh-list-toggler').on('click', function(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    $('#wysh-list-brief').toggle();
-  });
   $(document).click(function() {
     $('#wysh-list-brief').hide();
   });
