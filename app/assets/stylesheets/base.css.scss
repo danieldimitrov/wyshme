@@ -25,6 +25,9 @@ body {
 
       i.icon {
         display: inline;
+        opacity: .3;
+        filter:alpha(opacity=30);
+        vertical-align: top;
       }
     }
   }
