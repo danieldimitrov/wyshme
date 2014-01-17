@@ -1,5 +1,4 @@
-App.controller 'CatalogCtrl', ['$scope', 'Category', '$log', ($scope, Category, $log) ->
-  $scope.allFeaturedItems = Category.allFeaturedItems ->
-    $log.info($scope.allFeaturedItems)
+App.controller 'CatalogCtrl', ['$scope', 'Category', ($scope, Category) ->
+  $scope.allFeaturedItems = Category.allFeaturedItems()
 
 ]
