@@ -1,4 +1,10 @@
 App.factory 'Category', ['$resource', 'API_HOST', ($resource, API_HOST) ->
   # TODO: Place root API's URL to configuration
-  $resource "#{API_HOST}/api/categories/:id", id: '@id'
+  $resource "#{API_HOST}/api/categories/:id", id: '@id',
+    featured_items:
+      method: 'GET'
+      url: "#{API_HOST}/api/categories/:id/featured_items"
+    allFeaturedItems:
+      method: 'GET'
+      url: "#{API_HOST}/api/categories/featured_items"
 ]
