@@ -4,7 +4,9 @@ App.factory 'Category', ['$resource', 'API_HOST', ($resource, API_HOST) ->
     featured_items:
       method: 'GET'
       url: "#{API_HOST}/api/categories/:id/featured_items"
+      isArray: true
     allFeaturedItems:
       method: 'GET'
       url: "#{API_HOST}/api/categories/featured_items"
+      isArray: true
 ]
