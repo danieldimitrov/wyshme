@@ -1,10 +1,10 @@
-<div class="ui section dropdown item" ng-show="auth.isLoggedIn()">
+<div id="user-notifications" class="ui section dropdown item" ng-show="auth.isLoggedIn()">
   <%= render partial: 'layouts/nav_partials/notifications' %>
 </div>
 
 <div id="user-details"  class="ui section dropdown item" ng-show="auth.isLoggedIn()">
   <%= image_tag('demo/ivan.jpg', width: '24') %>
-  <span>{{auth.user.email}}</span>
+  <!--span>{{auth.user.email}}</span-->
   <div class="menu">
     <a href="/account" class="item">Edit Profile</a>
     <a href class="item" ng-click="auth.logout()">Logout</a>
