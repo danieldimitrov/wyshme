@@ -15,6 +15,17 @@ body {
     h1 {
       text-align: center;
       margin: .5em 0 1em;
+      position: relative;
+
+      .button.right.floated {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      i.icon {
+        display: inline;
+      }
     }
   }
 
