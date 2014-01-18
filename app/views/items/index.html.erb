@@ -147,7 +147,7 @@
                 <div class="ui label">{{selectedItem.likes}} Likes</div>
               </div>
                 <div class="ui buttons event actions">
-                <button class="ui button">
+                <button class="ui button add-to-event">
                   <i class="calendar icon"></i>
                   Add to Event
                 </button>
@@ -201,4 +201,7 @@
   <h1>All Items</h1>
 
   <div deckgrid source="categorizedItems" cardTemplate="/templates/deckgrid_card" class="deckgrid clearfix"></div>  
+  
+  <%= render partial: 'add_to_event_modal' %>
 </div>
+
