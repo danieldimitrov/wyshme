@@ -28,3 +28,31 @@
     }
   }
 }
+
+@media only screen and (max-width: 889px) {
+  #app .container h1 .button.right.floated {
+    position: relative;
+    display: block;
+    top: auto;
+    right: auto;
+    width: 100%;
+    clear: both;
+    margin: 20px 0;
+  }
+
+  .filters {
+    .ui.selection.dropdown {
+      display: block;
+      margin: 0 0 10px;
+
+      > .dropdown.icon {
+        float: right;
+      }
+    }
+
+    .ui.search-field.input {
+      width: 100%;
+      float: none;
+    }
+  } 
+}
