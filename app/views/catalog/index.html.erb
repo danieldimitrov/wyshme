@@ -1,18 +1,15 @@
 <h1>Catalog</h1>
 
 <div class="ui column stackable page grid">
-  <div class="ten wide column ui fullwidth items">
-    <!-- It must be styled inside the same Deckgrid if possible. -->
-    <!-- <div deckgrid source="firstItem"
+  <!-- <div class="ten wide column ui fullwidth items">
+    It must be styled inside the same Deckgrid if possible.
+    <div deckgrid source="firstItem"
          cardTemplate="/templates/deckgrid_card"
          class="deckgrid clearfix"></div>
-     -->
-  </div>
-  <div class="six wide column ui two-item items">
-    <div deckgrid source="allFeaturedItems"
-         cardTemplate="/templates/deckgrid_card"
-         class="deckgrid clearfix"></div>
-  </div>
+  </div> -->
+  <div deckgrid source="allFeaturedItems"
+       cardTemplate="/templates/deckgrid_card"
+       class="deckgrid clearfix wide column ui two-item items"></div>
 </div>
 
 <div class="ui clearing horizontal divider">
@@ -20,10 +17,7 @@
 </div>
 
 <div class="category-list" ng-controller="CategoriesCtrl">
-  <div class="ui six column stackable page grid">
-    <div deckgrid source="categories"
-         cardTemplate="/templates/category_card"
-         class="deckgrid clearfix">
-    </div>
-  </div>
+  <div deckgrid source="categories"
+       cardTemplate="/templates/category_card"
+       class="deckgrid clearfix ui six column stackable page grid"></div>
 </div>
