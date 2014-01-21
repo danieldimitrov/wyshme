@@ -56,10 +56,7 @@ angular.module('akoenig.deckgrid').factory('DeckgridDescriptor', [
 
             this.template = '<div data-ng-repeat="column in columns" class="{{layout.classList}}">' +
                                 '<div data-ng-repeat="card in column" data-ng-include="cardTemplate"' +
-                                    ' class="{{layout.classListItem}}"' +
-                                    // TODO: pass directives below via deckgrid or somehow like that
-                                    ' bn-delegate=".name a | mother.selectItem(card)"></div>' +
-                            '</div>';
+                                    ' class="{{layout.classListItem}}"></div></div>';
 
             this.scope = {
                 'model': '=source'

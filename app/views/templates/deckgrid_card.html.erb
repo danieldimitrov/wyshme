@@ -16,7 +16,8 @@
   </div>
 
   <div class="ui buttons event actions">
-    <button class="ui button add-to-event">
+    <button class="ui button add-to-event"
+            bn-delegate="#add-to-event-modal | modal | mother.addItemToEvent(card)">
       <i class="calendar icon"></i>
       Add to Event
     </button>
@@ -24,11 +25,15 @@
 </div>
 <div class="content">
 
-  <h2 class="name"><a href="#">{{card.name}}</a></h2>
+  <h2 class="name">
+    <a href="#" bn-delegate="#selected-item | dimmer | mother.selectItem(card)">
+      {{card.name}}
+    </a>
+  </h2>
   <div>
     <div class="price left floated">${{card.price}}</div>
     <div class="likes right floated">
-      <span class="wyshes-count"><i class="like icon"></i> {{card.wyshes}}</span>
+      <span class="wyshes-count"><i class="like icon"></i>{{card.wyshes}}</span>
       <span class="likes-count"><i class="thumbs up icon"></i> {{card.likes}}</span>
     </div>
   </div>
