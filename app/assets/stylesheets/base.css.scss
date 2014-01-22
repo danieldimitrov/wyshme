@@ -75,6 +75,12 @@ body {
       cursor: default;
       border-radius: 0;
       box-shadow: none;
+      float: none;
+
+      > .image {
+        min-height: 70px;
+        position: relative;
+      }
 
       > .content {
         padding: 0.75em 0;
@@ -198,6 +204,38 @@ body {
           background: #F8F8F8;
           text-transform: none;
         }
+
+        &.event {
+          bottom: 10px;
+          top: auto;
+          left: 0;
+          right: auto;
+          -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+          width: 100%;
+          text-align: center;
+
+          button {
+            float: none;
+            display: inline-block;
+            margin: 0;
+            width: auto;
+            background: #444;
+            white-space: nowrap;
+            color: #DDD;
+            border: none;
+            padding: 10px 10px;
+            font-size: 12px;
+
+            &:hover {
+              background: #333;
+            }
+
+            .icon {
+              font-size: 1em;
+            }
+          }
+        }
       }
 
       &:not(.active):hover  {
@@ -253,6 +291,15 @@ body {
           display: inline-block;
           width: 55%;
           vertical-align: top;
+
+          .name,
+          .name:hover {
+            font-weight: normal;
+            font-size: 1.5em;
+            margin-top: 2em;
+            cursor: default;
+            text-decoration: none;
+          }
         }
 
         .ui.buttons.actions {
@@ -264,7 +311,17 @@ body {
           -moz-transform: translate(0,0);
           transform: translate(0,0);
           width: auto;
-          margin: 1em 0 2em;
+          margin: 1em 0 1em;
+
+          &.event {
+            display: block;
+            margin: 0 0 1em;
+            text-align: left;
+
+            button {
+              width: auto;
+            }
+          }
 
           button {
             width: 100px;

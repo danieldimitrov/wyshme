@@ -16,6 +16,17 @@
   .ui.stackable.grid > .row > .column, .ui.stackable.grid > .column {
     margin: 1.5em 0% 0em !important;
   }
+
+  #add-to-event-modal .event-list {
+    .ui.selection.dropdown {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .submit.button {
+      float: none;
+      width: 100%;
+    }
+  }
 }
 
 @media only screen and (max-width: 889px) {

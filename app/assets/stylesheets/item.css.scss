@@ -107,3 +107,24 @@
     margin-top: 0;
   }
 }
+
+#add-to-event-modal .event-list {
+  margin: 0 0 40px;
+
+  .ui.selection.dropdown {
+    width: 69%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+
+    > .dropdown.icon {
+      float: right;
+    }
+  }
+
+  .submit.button {
+    width: 30%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    float: right;
+  }
+}

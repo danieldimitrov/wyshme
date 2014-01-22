@@ -2,6 +2,7 @@ App.controller 'ItemsCtrl', ['$scope', '$filter', 'Item', 'Auth', ($scope, $filt
   $scope.categorizedItems = []
   $scope.selectedCategoryId = null
   $scope.selectedItem = null
+  $scope.itemForEvent = null
 
   updateItem = (item) ->
     angular.forEach $scope.items, (itm, key) ->
@@ -33,4 +34,8 @@ App.controller 'ItemsCtrl', ['$scope', '$filter', 'Item', 'Auth', ($scope, $filt
     if user_token? and user_token != ''
       Item.wysh { id: item.id, access_token: user_token }, null, (itm) ->
         updateItem itm
+
+  $scope.addItemToEvent = (item) ->
+    console.log(item)
+    $scope.itemForEvent = item
 ]

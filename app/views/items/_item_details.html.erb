@@ -1,0 +1,72 @@
+<div ng-controller="AuthCtrl" ng-show="auth.isLoggedIn()">
+  <div id="selected-item" ng-show="selectedItem">
+    <div class="ui inverted dimmer">
+      <div class="" style="position:fixed;width: 100%;">
+
+        <div class="ui text loader">Loading</div>
+        <div class="center ui items">
+          <div class="active item">
+            <button class="ui basic close button"><i class="remove icon"></i></button>
+            
+            <div class="image">
+              <img src="{{selectedItem.image_url}}">
+            </div>
+
+            <div class="content">
+              <div class="ui buttons actions">
+                <button class="ui blue button"><i class="like icon"></i></button>
+                <div class="ui label">{{selectedItem.wyshes}} Wyshes</div>
+                <button class="ui like button"><i class="thumbs up outline icon"></i></button>
+                <div class="ui label">{{selectedItem.likes}} Likes</div>
+              </div>
+              <div class="ui buttons event actions">
+                <button class="ui button add-to-event"
+                        bn-delegate="#add-to-event-modal | modal | addItemToEvent(selectedItem)">
+                  <i class="calendar icon"></i>
+                  Add to Event
+                </button>
+              </div>
+              <div class="name">{{selectedItem.name}}</div>
+              <p class="price">$ {{selectedItem.price}}</p>
+              <p class="description">{{selectedItem.description}}</p>
+
+              <div class="extended-content">
+                <div class="ui section divider"></div>
+
+                <div class="wyshed-by-list">
+                  <h3>Wyshed by</h3>
+                  <a href="#" class="circular ui small icon button">
+                    <i class="icon user"></i>
+                  </a>
+                  <a href="#" class="circular ui small icon button">
+                    <i class="icon user"></i>
+                  </a>
+                  <a href="#" class="circular ui small icon button">
+                    <i class="icon user"></i>
+                  </a>
+                  <a href="#" class="circular ui small icon button">
+                    <i class="icon user"></i>
+                  </a>
+                </div>
+
+                <div class="related-list">
+                  <h3>Related Items</h3>
+                  <a href="#">
+                    <%= image_tag('demo/Nextime-Old-fashioned-Turntable-Clock.jpg') %>
+                  </a>
+                  <a href="#">
+                    <%= image_tag('demo/238118e9dfa790712af9749c56c8ea16.jpg') %>
+                  </a>
+                  <a href="#">
+                    <%= image_tag('demo/105174_l_85.jpg') %>
+                  </a>
+                </div>                
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

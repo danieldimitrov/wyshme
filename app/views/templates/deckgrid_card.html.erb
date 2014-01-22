@@ -1,7 +1,6 @@
 <div class="image">
   <img src="" data-ng-src="{{card.image_url}}">
-</div>
-<div class="content">
+
   <div class="ui buttons actions">
     <button class="ui button"
             data-ng-click="mother.wyshItem(card);">
@@ -15,11 +14,26 @@
     <div class="ui label">{{card.likes}} Likes</div>
     <button class="ui basic close button">close</button>
   </div>
-  <h2 class="name"><a href="#">{{card.name}}</a></h2>
+
+  <div class="ui buttons event actions">
+    <button class="ui button add-to-event"
+            bn-delegate="#add-to-event-modal | modal | mother.addItemToEvent(card)">
+      <i class="calendar icon"></i>
+      Add to Event
+    </button>
+  </div>
+</div>
+<div class="content">
+
+  <h2 class="name">
+    <a href="#" bn-delegate="#selected-item | dimmer | mother.selectItem(card)">
+      {{card.name}}
+    </a>
+  </h2>
   <div>
     <div class="price left floated">${{card.price}}</div>
     <div class="likes right floated">
-      <span class="wyshes-count"><i class="like icon"></i> {{card.wyshes}}</span>
+      <span class="wyshes-count"><i class="like icon"></i>{{card.wyshes}}</span>
       <span class="likes-count"><i class="thumbs up icon"></i> {{card.likes}}</span>
     </div>
   </div>
