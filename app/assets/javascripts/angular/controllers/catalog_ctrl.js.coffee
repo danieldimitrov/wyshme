@@ -6,7 +6,7 @@ App.controller 'CatalogCtrl', ['$scope', 'Category', 'Item', ($scope, Category, 
 
   $scope.allFeaturedItems = Item.featured(page: 0, per_page: 5)
 
-  $scope.categories = Category.query()
+  $scope.categories = Category.query(page: 0, per_page: 100)
 
   $scope.selectItem = (item) ->
     $scope.selectedItem = item
