@@ -14,6 +14,8 @@ App.directive 'bnDelegate', ($parse) ->
     element.on 'click.bnDelegate', (event) ->
       event.preventDefault()
 
+      # TODO: remove this hack which depends on dimmer container behaviour
+      target.css('z-index', 9999) if func is 'dimmer'
       target[func]('show')
 
       localScope = $(event.target).scope()

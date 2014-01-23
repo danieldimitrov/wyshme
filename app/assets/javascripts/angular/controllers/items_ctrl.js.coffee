@@ -19,6 +19,9 @@ App.controller 'ItemsCtrl', ['$scope', '$filter', 'Item', 'Auth', ($scope, $filt
   $scope.selectItem = (item) ->
     $scope.selectedItem = item
 
+  $scope.clearSelectedItem = ->
+    $scope.selectedItem = null
+
   $scope.items = Item.query null, (items) ->
     $scope.categorizedItems =
       $filter('categorizeItems')(items, $scope.selectedCategoryId)

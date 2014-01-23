@@ -63,6 +63,8 @@ $(function() {
   $('#account-sidebar.sidebar').sidebar({overlay: true}).sidebar('toggle');
 
   $('.active.item .close.button').on('click', function () {
+    // TODO: remove this hack
+    $('#selected-item').css('z-index', -1);
     $('#selected-item').dimmer('hide');
   });
 
