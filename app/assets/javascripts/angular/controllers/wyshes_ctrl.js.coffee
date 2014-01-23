@@ -1,12 +1,15 @@
-App.controller 'CatalogCtrl', ['$scope', 'Category', 'Item', ($scope, Category, Item) ->
+App.controller 'WyshesCtrl', ['$scope', '$filter', 'Item', 'Auth', ($scope, $filter, Item, Auth) ->
   # TODO: CatalogCtrl, WyshesCtrl, and ItemsCtrl contain the same code.
   #   Move it to AngularJS Service or so.
+  $scope.wyshedFilteredItems = []
   $scope.selectedItem = null
   $scope.itemForEvent = null
 
-  $scope.allFeaturedItems = Item.featured(page: 0, per_page: 5)
-
-  $scope.categories = Category.query()
+  $scope.wyshedItems = Item.wyshed(
+    { access_token: Auth.user.access_token }, null, (items) ->
+      console.log 'wyshedItems', items
+      $scope.wyshedFilteredItems = items
+  )
 
   $scope.selectItem = (item) ->
     $scope.selectedItem = item
@@ -28,5 +31,4 @@ App.controller 'CatalogCtrl', ['$scope', 'Category', 'Item', ($scope, Category, 
 
   $scope.addItemToEvent = (item) ->
     $scope.itemForEvent = item
-
 ]

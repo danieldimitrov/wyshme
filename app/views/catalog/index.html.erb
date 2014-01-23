@@ -1,23 +1,22 @@
 <h1>Catalog</h1>
 
 <div class="ui column stackable page grid">
-  <!-- <div class="ten wide column ui fullwidth items">
-    It must be styled inside the same Deckgrid if possible.
-    <div deckgrid source="firstItem"
-         cardTemplate="/templates/deckgrid_card"
-         class="deckgrid clearfix"></div>
-  </div> -->
-  <div deckgrid source="allFeaturedItems"
+  <div deckgrid
+       source="allFeaturedItems"
        cardTemplate="/templates/deckgrid_card"
        class="deckgrid clearfix wide column ui two-item items"></div>
 </div>
+
+<%= render partial: 'items/add_to_event_modal' %>
+<%= render partial: 'items/item_details' %>
 
 <div class="ui clearing horizontal divider">
   <i class="gift icon"></i>
 </div>
 
-<div class="category-list" ng-controller="CategoriesCtrl">
-  <div deckgrid source="categories"
+<div>
+  <div deckgrid
+       source="categories"
        cardTemplate="/templates/category_card"
        class="deckgrid clearfix ui six column stackable page grid"></div>
 </div>

@@ -17,9 +17,12 @@ App.filter 'categorizeItems', ->
 
     categorized
 
-App.constant 'API_HOST', 'http://wyshme-api.herokuapp.com'
-# App.constant 'API_HOST', 'http://localhost:2999'
+#App.constant 'API_HOST', 'http://wyshme-api.herokuapp.com'
+App.constant 'API_HOST', 'http://localhost:2999'
 
 App.run ($rootScope) ->
   $rootScope.$on 'categoryChangeEmit', (event, args) ->
     $rootScope.$broadcast 'categoryChanged', args
+
+App.controller 'PagesCtrl', ['$scope', ($scope) ->
+]
