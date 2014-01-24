@@ -1,5 +1,4 @@
 App.controller 'CategoryShowCtrl', ['$scope', 'Category', '$filter', ($scope, Category, $filter) ->
-# TODO: change id: 1 to generic ID
   category_id = $('#div-data-category').data("category")
   $scope.category = Category.get(id: category_id)
   allItems = Category.items(id: category_id)
