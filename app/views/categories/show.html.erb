@@ -1,0 +1,17 @@
+<div ng-controller="CategoryShowCtrl">
+  <h1>{{category.name}}</h1>
+  <div class="filters">
+    <select ng-model="selectedOrder" ng-options="o.label for o in order">
+      <option value="">-- Order By --</option>
+    </select>
+
+    <select ng-model="selectedRange" ng-options="range as '$' + range.start + ' to $' + range.end for range in priceRanges">
+      <option value="">-- Price Range --</option>
+    </select>
+
+    <input type="text" ng-model="keyword" placeholder="Keywords ...">
+  </div>
+
+
+  <div deckgrid source="items | orderBy: selectedOrder.value" cardTemplate="/templates/deckgrid_card" class="deckgrid clearfix"></div>
+</div>
