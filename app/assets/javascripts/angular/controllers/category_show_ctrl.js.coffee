@@ -3,6 +3,10 @@ App.controller 'CategoryShowCtrl', ['$scope', 'Category', '$filter', ($scope, Ca
   $scope.category = Category.get(id: 1)
   allItems = Category.items(id: 1)
   $scope.items = allItems
+  sortByFilter = null
+  priceRangeFilter = null
+  dateRangeFilter = null
+  keywordFilter = null
 
   $scope.order = [
     {label: "Price",value: "price"},
@@ -19,17 +23,36 @@ App.controller 'CategoryShowCtrl', ['$scope', 'Category', '$filter', ($scope, Ca
     {from : 0, to : 100},
     {from : 100, to : 300},
     {from : 300, to : 1000},
-    {from : 1000, to : Infinity}
+    {from : 1000, to : 5000}
   ]
 
-  $scope.changeOrder = (value) ->
-    $scope.items = $filter('orderBy')(allItems, value)
+  $scope.setSortByFilter = (value) ->
+    sortByFilter = value
+    filterItems()
 
-  $scope.changePriceRange = (from, to) ->
-    $scope.items = $filter('compareItemsPrices')(allItems, from, to)
+  $scope.setPriceRangeFilter = (value) ->
+    priceRangeFilter = value
+    filterItems()
+
+  $scope.setKeywordFilter = (value) ->
+    keywordFilter = value
+    filterItems()
+
+  filterItems = ->
+    filteredItems = filterByOrder(allItems)
+    if priceRangeFilter != null
+      filteredItems = filterByPriceRange(filteredItems)
+    filteredItems = filterByKeyword(filteredItems)
+    $scope.items = filteredItems
+
+  filterByOrder = (items) ->
+    $filter('orderBy')(items, sortByFilter)
+
+  filterByPriceRange = (items) ->
+    $filter('compareItemsPrices')(items, priceRangeFilter.from, priceRangeFilter.to)
 
   #TODO: change only for name and description
-  $scope.changeKeyword = (value) ->
-    $scope.items = $filter('filter')(allItems, keyword)
+  filterByKeyword = (items) ->
+    $filter('filter')(items, keywordFilter)
 
 ]

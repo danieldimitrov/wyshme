@@ -1,15 +1,44 @@
-<div ng-controller="CategoryShowCtrl">
-  <h1>{{category.name}}</h1>
-  <div class="filters">
-    <select ng-model="selectedOrder" ng-options="o.label for o in order" ng-change="changeOrder(selectedOrder.value)">
-      <option value="">-- Order By --</option>
-    </select>
+<div class="ui one column page grid">
+  <div class="four wide column" ng-controller="CategoryShowCtrl">
+    <div class="ui piled segment">
 
-    <select ng-model="selectedRange" ng-options="range as '$' + range.from + ' to $' + range.to for range in priceRanges" ng-change="changePriceRange(selectedRange)">
-      <option value="">-- Price Range --</option>
-    </select>
+      <h1 class="ui header">
+        {{category.name}}
+      </h1>
 
-    <input type="text" ng-model="keyword" placeholder="Keywords ..." ng-change="changeKeyword(keyword)">
+      <div class="ui divider"></div>
+
+      <div class="filters">
+
+        <div class="ui selection dropdown">
+          <div class="text">Sort By</div>
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            <div class="item" ng-repeat="o in order" ng-click="setSortByFilter(o.value)">{{o.label}}</div>
+          </div>
+        </div>
+
+        <div class="ui selection dropdown">
+          <div class="text">Price Range</div>
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            <div class="item" ng-repeat="pr in priceRanges" data-value="{{pr}}" ng-click="setPriceRangeFilter(pr)")>${{pr.from}} - ${{pr.to}}</div>
+          </div>
+        </div>
+
+        <div class="ui selection dropdown">
+          <div class="text">Date Range</div>
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            <div class="item" data-value="1">Date</div>
+          </div>
+        </div>
+
+        <div class="ui icon search-field input right floated">
+          <input type="text" placeholder="Filter.." ng-model="keyword" ng-change="setKeywordFilter(keyword)">
+          <i class="search link icon"></i>
+        </div>
+    </div>
   </div>
 
   <div deckgrid source="items" cardTemplate="/templates/deckgrid_card" class="deckgrid clearfix"></div>
