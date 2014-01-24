@@ -1,7 +1,8 @@
 App.controller 'CategoryShowCtrl', ['$scope', 'Category', '$filter', ($scope, Category, $filter) ->
 # TODO: change id: 1 to generic ID
   $scope.category = Category.get(id: 1)
-  $scope.items = Category.items(id: 1)
+  allItems = Category.items(id: 1)
+  $scope.items = allItems
 
   $scope.order = [
     {label: "Price",value: "price"},
@@ -22,13 +23,13 @@ App.controller 'CategoryShowCtrl', ['$scope', 'Category', '$filter', ($scope, Ca
   ]
 
   $scope.changeOrder = (value) ->
-    $scope.items = $filter('orderBy')(Category.items(id: 1), value)
+    $scope.items = $filter('orderBy')(allItems, value)
 
   $scope.changePriceRange = (from, to) ->
-    $scope.items = $filter('compareItemsPrices')(Category.items(id: 1), from, to)
+    $scope.items = $filter('compareItemsPrices')(allItems, from, to)
 
   #TODO: change only for name and description
   $scope.changeKeyword = (value) ->
-    $scope.items = $filter('filter')(Category.items(id: 1), keyword)
+    $scope.items = $filter('filter')(allItems, keyword)
 
 ]
