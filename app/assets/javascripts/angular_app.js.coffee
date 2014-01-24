@@ -17,6 +17,15 @@ App.filter 'categorizeItems', ->
 
     categorized
 
+App.filter 'compareItemsPrices', ->
+  (items, from, to) ->
+    itemsInRange = []
+    angular.forEach items, (item) ->
+      if item.price >= from && item.price <= to
+        itemsInRange.push item
+
+    itemsInRange
+
 App.constant 'API_HOST', 'http://wyshme-api.herokuapp.com'
 #App.constant 'API_HOST', 'http://localhost:2999'
 

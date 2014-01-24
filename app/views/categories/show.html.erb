@@ -1,17 +1,16 @@
 <div ng-controller="CategoryShowCtrl">
   <h1>{{category.name}}</h1>
   <div class="filters">
-    <select ng-model="selectedOrder" ng-options="o.label for o in order">
+    <select ng-model="selectedOrder" ng-options="o.label for o in order" ng-change="changeOrder(selectedOrder.value)">
       <option value="">-- Order By --</option>
     </select>
 
-    <select ng-model="selectedRange" ng-options="range as '$' + range.start + ' to $' + range.end for range in priceRanges">
+    <select ng-model="selectedRange" ng-options="range as '$' + range.from + ' to $' + range.to for range in priceRanges" ng-change="changePriceRange(selectedRange)">
       <option value="">-- Price Range --</option>
     </select>
 
-    <input type="text" ng-model="keyword" placeholder="Keywords ...">
+    <input type="text" ng-model="keyword" placeholder="Keywords ..." ng-change="changeKeyword(keyword)">
   </div>
 
-
-  <div deckgrid source="items | orderBy: selectedOrder.value" cardTemplate="/templates/deckgrid_card" class="deckgrid clearfix"></div>
+  <div deckgrid source="items" cardTemplate="/templates/deckgrid_card" class="deckgrid clearfix"></div>
 </div>

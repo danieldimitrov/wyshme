@@ -1,5 +1,5 @@
-App.controller 'CategoryShowCtrl', ['$scope', 'Category', ($scope, Category) ->
-# TODO: change to generic ID
+App.controller 'CategoryShowCtrl', ['$scope', 'Category', '$filter', ($scope, Category, $filter) ->
+# TODO: change id: 1 to generic ID
   $scope.category = Category.get(id: 1)
   $scope.items = Category.items(id: 1)
 
@@ -15,10 +15,20 @@ App.controller 'CategoryShowCtrl', ['$scope', 'Category', ($scope, Category) ->
   ]
 
   $scope.priceRanges = [
-    {start : 0, end : 100},
-    {start : 100, end : 300},
-    {start : 300, end : 1000},
-    {start : 1000, end : Infinity}
+    {from : 0, to : 100},
+    {from : 100, to : 300},
+    {from : 300, to : 1000},
+    {from : 1000, to : Infinity}
   ]
+
+  $scope.changeOrder = (value) ->
+    $scope.items = $filter('orderBy')(Category.items(id: 1), value)
+
+  $scope.changePriceRange = (from, to) ->
+    $scope.items = $filter('compareItemsPrices')(Category.items(id: 1), from, to)
+
+  #TODO: change only for name and description
+  $scope.changeKeyword = (value) ->
+    $scope.items = $filter('filter')(Category.items(id: 1), keyword)
 
 ]
