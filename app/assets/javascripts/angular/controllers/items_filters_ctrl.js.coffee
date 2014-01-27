@@ -1,4 +1,4 @@
-App.controller 'FilterCtrl', ['$scope', '$filter', ($scope, $filter) ->
+App.controller 'ItemsFiltersCtrl', ['$scope', '$filter', ($scope, $filter) ->
   sortByFilter = null
   priceRangeFilter = null
   fromDateFilter = null
@@ -70,7 +70,7 @@ App.controller 'FilterCtrl', ['$scope', '$filter', ($scope, $filter) ->
   filterByKeyword = (items) ->
     nameFilter = $filter('filter')(items, {name: keywordFilter}, false)
     descriptionFilter = $filter('filter')(items, {description: keywordFilter}, false)
-    $scope.items = $.unique($.merge(nameFilter, descriptionFilter))
+    return $.unique($.merge(nameFilter, descriptionFilter))
 
   filterByFromDate = (items) ->
     $filter('filterFromDate')(items, fromDateFilter)
