@@ -127,7 +127,8 @@
 <div ng-controller="AuthCtrl" ng-show="auth.isLoggedIn()">
   <h1>All Items</h1>
 
-  <div deckgrid source="categorizedItems"
+  <div deckgrid
+       source="categorizedItems"
        cardTemplate="/templates/deckgrid_card"
        class="deckgrid clearfix"></div>
 </div>

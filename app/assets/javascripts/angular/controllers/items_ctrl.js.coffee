@@ -1,4 +1,6 @@
 App.controller 'ItemsCtrl', ['$scope', '$filter', 'Item', 'Auth', ($scope, $filter, Item, Auth) ->
+  # TODO: CatalogCtrl, WyshesCtrl, and ItemsCtrl contain the same code.
+  #   Move it to AngularJS Service or so.
   $scope.categorizedItems = []
   $scope.selectedCategoryId = null
   $scope.selectedItem = null
@@ -39,6 +41,5 @@ App.controller 'ItemsCtrl', ['$scope', '$filter', 'Item', 'Auth', ($scope, $filt
         updateItem itm
 
   $scope.addItemToEvent = (item) ->
-    console.log(item)
     $scope.itemForEvent = item
 ]

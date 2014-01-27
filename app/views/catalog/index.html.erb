@@ -1,0 +1,25 @@
+<h1>Catalog</h1>
+
+<div class="ui column stackable page grid">
+  <div deckgrid
+       source="allFeaturedItems"
+       cardTemplate="/templates/deckgrid_card"
+       class="deckgrid clearfix wide column ui two-item items"></div>
+</div>
+
+<%= render partial: 'items/add_to_event_modal' %>
+<%= render partial: 'items/item_details' %>
+
+<h3 style="text-align: center;margin: 1em 0;">Check the categories</h3>
+
+<div class="ui clearing horizontal divider">
+  <i class="gift icon"></i>
+</div>
+
+
+<div>
+  <div deckgrid
+       source="categories"
+       cardTemplate="/templates/category_card"
+       class="deckgrid clearfix ui six column stackable page grid"></div>
+</div>
