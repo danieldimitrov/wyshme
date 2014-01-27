@@ -3,6 +3,7 @@ Wyshme::Application.routes.draw do
   resources :lists,  only: [:index]
   resources :items,  only: [:index]
   resources :catalog, only: [:index]
+  resources :categories, only: [:show]
 
   get 'templates(/:action)', controller: :templates
 

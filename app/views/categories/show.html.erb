@@ -1,0 +1,56 @@
+<div class="ui one column page grid">
+  <div class="four wide column" ng-controller="CategoryShowCtrl"
+       data-category ="<%= @id %>" id="div-data-category">
+    <div class="ui piled segment">
+      <h1 class="ui header">{{category.name}}</h1>
+
+      <div class="ui divider"></div>
+
+      <div class="filters" ng-controller="ItemsFiltersCtrl">
+
+        <div class="ui selection dropdown">
+          <div class="text" id="sortby_text">Sort By</div>
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            <div class="item" ng-repeat="o in order" ng-click="setSortByFilter(o.value)">{{o.label}}</div>
+          </div>
+        </div>
+
+        <div class="ui selection dropdown">
+          <div class="text" id="pricerange_text">Price Range</div>
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            <div class="item" ng-repeat="pr in priceRanges" ng-click="setPriceRangeFilter(pr)">${{pr.from}} - ${{pr.to}}</div>
+          </div>
+        </div>
+
+        <div class="date field">
+          <div class="ui left labeled icon input">
+            <input id="from_date" type="text" placeholder="From date" class="datepicker" ng-model="fromDate" ng-change="setFromDateFilter(fromDate)">
+            <i class="calendar icon right floated"></i>
+            <div class="ui corner label">
+              <i class="icon asterisk"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="date field">
+          <div class="ui left labeled icon input">
+            <input id="to_date" type="text" placeholder="To date" class="datepicker" ng-model="toDate" ng-change="setToDateFilter(toDate)">
+            <i class="calendar icon right floated"></i>
+            <div class="ui corner label">
+              <i class="icon asterisk"></i>
+            </div>
+          </div>
+        </div>
+
+        <a href="" ng-click="resetAllFilters()">Reset filters</a>
+        <div class="ui icon search-field input right floated">
+          <input type="text" placeholder="Filter.." ng-model="keyword" ng-change="setKeywordFilter(keyword)" id="keyword">
+          <i class="search link icon"></i>
+        </div>
+    </div>
+  </div>
+
+  <div deckgrid source="items.filtered" cardTemplate="/templates/deckgrid_card" class="deckgrid clearfix"></div>
+</div>

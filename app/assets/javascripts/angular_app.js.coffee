@@ -17,6 +17,37 @@ App.filter 'categorizeItems', ->
 
     categorized
 
+App.filter 'compareItemsPrices', ->
+  (items, from, to) ->
+    itemsInRange = []
+    angular.forEach items, (item) ->
+      if item.price >= from && item.price <= to
+        itemsInRange.push item
+
+    itemsInRange
+
+App.filter 'filterFromDate', ->
+  (items, from) ->
+    itemsInRange = []
+    fromTime = new Date(from).getTime()
+    angular.forEach items, (item) ->
+      itemTime = new Date(item.updated_at).getTime()
+      if itemTime >= fromTime
+        itemsInRange.push item
+
+    itemsInRange
+
+App.filter 'filterToDate', ->
+  (items, to) ->
+    itemsInRange = []
+    toTime = new Date(to).getTime()
+    angular.forEach items, (item) ->
+      itemTime = new Date(item.updated_at).getTime()
+      if itemTime <= toTime
+        itemsInRange.push item
+
+    itemsInRange
+
 App.constant 'API_HOST', 'http://wyshme-api.herokuapp.com'
 #App.constant 'API_HOST', 'http://localhost:2999'
 

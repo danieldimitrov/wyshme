@@ -1,4 +1,4 @@
-App.controller 'CatalogCtrl', ['$scope', 'Category', 'Item', ($scope, Category, Item) ->
+App.controller 'CatalogCtrl', ['$scope', '$window', 'Category', 'Item', ($scope, $window, Category, Item) ->
   # TODO: CatalogCtrl, WyshesCtrl, and ItemsCtrl contain the same code.
   #   Move it to AngularJS Service or so.
   $scope.selectedItem = null
@@ -28,5 +28,8 @@ App.controller 'CatalogCtrl', ['$scope', 'Category', 'Item', ($scope, Category, 
 
   $scope.addItemToEvent = (item) ->
     $scope.itemForEvent = item
+
+  $scope.redirectToCategory = (category_id) ->
+    $window.location.href = "/categories/#{category_id}"
 
 ]
