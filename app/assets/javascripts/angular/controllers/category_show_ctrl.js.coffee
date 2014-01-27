@@ -39,10 +39,14 @@ App.controller 'CategoryShowCtrl', ['$scope', 'Category', '$filter', ($scope, Ca
     filterItems()
 
   filterItems = ->
-    filteredItems = filterByOrder(allItems)
+    filteredItems = allItems
+    if keywordFilter != null && keywordFilter.length > 1
+      filteredItems = filterByKeyword(filteredItems)
+
+    filteredItems = filterByOrder(filteredItems)
     if priceRangeFilter != null
       filteredItems = filterByPriceRange(filteredItems)
-    filteredItems = filterByKeyword(filteredItems)
+
     $scope.items = filteredItems
 
   filterByOrder = (items) ->
@@ -51,9 +55,10 @@ App.controller 'CategoryShowCtrl', ['$scope', 'Category', '$filter', ($scope, Ca
   filterByPriceRange = (items) ->
     $filter('compareItemsPrices')(items, priceRangeFilter.from, priceRangeFilter.to)
 
-  #TODO: change only for name and description
   filterByKeyword = (items) ->
-    $filter('filter')(items, keywordFilter)
+    nameFilter = $filter('filter')(items, {name: keywordFilter}, false)
+    descriptionFilter = $filter('filter')(items, {description: keywordFilter}, false)
+    $scope.items = $.unique($.merge(nameFilter, descriptionFilter))
 
   $scope.resetAllFilters = ->
     sortByFilter = null
