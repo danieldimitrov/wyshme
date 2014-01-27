@@ -1,5 +1,4 @@
 App.controller 'FilterCtrl', ['$scope', '$filter', ($scope, $filter) ->
-  allItems = $scope.items
   sortByFilter = null
   priceRangeFilter = null
   fromDateFilter = null
@@ -45,7 +44,7 @@ App.controller 'FilterCtrl', ['$scope', '$filter', ($scope, $filter) ->
     filterItems()
 
   filterItems = ->
-    filteredItems = allItems
+    filteredItems = $scope.items.all
     if keywordFilter != null && keywordFilter.length > 1
       filteredItems = filterByKeyword(filteredItems)
 
@@ -60,7 +59,7 @@ App.controller 'FilterCtrl', ['$scope', '$filter', ($scope, $filter) ->
     if toDateFilter != null
       filteredItems = filterByToDate(filteredItems)
 
-    $scope.items = filteredItems
+    $scope.items.filtered = filteredItems
 
   filterByOrder = (items) ->
     $filter('orderBy')(items, sortByFilter)

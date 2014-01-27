@@ -2,9 +2,7 @@
   <div class="four wide column" ng-controller="CategoryShowCtrl"
        data-category ="<%= @id %>" id="div-data-category">
     <div class="ui piled segment">
-      <h1 class="ui header">
-        {{category.name}}
-      </h1>
+      <h1 class="ui header">{{category.name}}</h1>
 
       <div class="ui divider"></div>
 
@@ -54,5 +52,5 @@
     </div>
   </div>
 
-  <div deckgrid source="items" cardTemplate="/templates/deckgrid_card" class="deckgrid clearfix"></div>
+  <div deckgrid source="items.filtered" cardTemplate="/templates/deckgrid_card" class="deckgrid clearfix"></div>
 </div>
