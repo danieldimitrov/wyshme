@@ -55,4 +55,19 @@ App.controller 'CategoryShowCtrl', ['$scope', 'Category', '$filter', ($scope, Ca
   filterByKeyword = (items) ->
     $filter('filter')(items, keywordFilter)
 
+  $scope.resetAllFilters = ->
+    sortByFilter = null
+    priceRangeFilter = null
+    dateRangeFilter = null
+    keywordFilter = null
+    filterItems()
+    setDefaultSelectValues()
+
+  setDefaultSelectValues = ->
+    $("#keyword").val('')
+    $("#sortby_text").html('Sort By')
+    $("#pricerange_text").html('Price Range')
+    $("#daterange_text").html('Date Range')
+    return
+
 ]
