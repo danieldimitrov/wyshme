@@ -26,13 +26,26 @@
           </div>
         </div>
 
-        <div class="ui selection dropdown">
-          <div class="text" id="daterange_text">Date Range</div>
-          <i class="dropdown icon"></i>
-          <div class="menu">
-            <div class="item">Date</div>
+        <div class="date field">
+          <div class="ui left labeled icon input">
+            <input id="from_date" type="text" placeholder="From date" class="datepicker" ng-model="fromDate" ng-change="setFromDateFilter(fromDate)">
+            <i class="calendar icon right floated"></i>
+            <div class="ui corner label">
+              <i class="icon asterisk"></i>
+            </div>
           </div>
         </div>
+
+        <div class="date field">
+          <div class="ui left labeled icon input">
+            <input id="to_date" type="text" placeholder="To date" class="datepicker" ng-model="toDate" ng-change="setToDateFilter(toDate)">
+            <i class="calendar icon right floated"></i>
+            <div class="ui corner label">
+              <i class="icon asterisk"></i>
+            </div>
+          </div>
+        </div>
+
         <a href="" ng-click="resetAllFilters()">Reset filters</a>
         <div class="ui icon search-field input right floated">
           <input type="text" placeholder="Filter.." ng-model="keyword" ng-change="setKeywordFilter(keyword)" id="keyword">

@@ -5,7 +5,8 @@ App.controller 'CategoryShowCtrl', ['$scope', 'Category', '$filter', ($scope, Ca
   $scope.items = allItems
   sortByFilter = null
   priceRangeFilter = null
-  dateRangeFilter = null
+  fromDateFilter = null
+  toDateFilter = null
   keywordFilter = null
 
   $scope.order = [
@@ -38,14 +39,29 @@ App.controller 'CategoryShowCtrl', ['$scope', 'Category', '$filter', ($scope, Ca
     keywordFilter = value
     filterItems()
 
+  $scope.setFromDateFilter = (value) ->
+    fromDateFilter = value
+    filterItems()
+
+  $scope.setToDateFilter = (value) ->
+    toDateFilter = value
+    filterItems()
+
   filterItems = ->
     filteredItems = allItems
     if keywordFilter != null && keywordFilter.length > 1
       filteredItems = filterByKeyword(filteredItems)
 
     filteredItems = filterByOrder(filteredItems)
+
     if priceRangeFilter != null
       filteredItems = filterByPriceRange(filteredItems)
+
+    if fromDateFilter != null
+      filteredItems = filterByFromDate(filteredItems)
+
+    if toDateFilter != null
+      filteredItems = filterByToDate(filteredItems)
 
     $scope.items = filteredItems
 
@@ -60,10 +76,17 @@ App.controller 'CategoryShowCtrl', ['$scope', 'Category', '$filter', ($scope, Ca
     descriptionFilter = $filter('filter')(items, {description: keywordFilter}, false)
     $scope.items = $.unique($.merge(nameFilter, descriptionFilter))
 
+  filterByFromDate = (items) ->
+    $filter('filterFromDate')(items, fromDateFilter)
+
+  filterByToDate = (items) ->
+    $filter('filterToDate')(items, toDateFilter)
+
   $scope.resetAllFilters = ->
     sortByFilter = null
     priceRangeFilter = null
-    dateRangeFilter = null
+    fromDateFilter = null
+    toDateFilter = null
     keywordFilter = null
     filterItems()
     setDefaultSelectValues()
@@ -72,7 +95,8 @@ App.controller 'CategoryShowCtrl', ['$scope', 'Category', '$filter', ($scope, Ca
     $("#keyword").val('')
     $("#sortby_text").html('Sort By')
     $("#pricerange_text").html('Price Range')
-    $("#daterange_text").html('Date Range')
+    $("#from_date").val('From date')
+    $("#to_date").val('To date')
     return
 
 ]
