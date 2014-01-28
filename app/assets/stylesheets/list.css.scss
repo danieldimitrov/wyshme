@@ -2,7 +2,63 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .filters {
+  position: relative;
+  font-size: .8em;
+
   .ui.selection.dropdown {
     margin-right: 10px;
+
+    + .date.field {
+      margin-right: 10px;
+    }
+  }
+
+  .date.field {
+    display: inline-block;
+
+    .ui.input {
+      width: 180px;
+      font-size: 16px;
+
+      .icon {
+        padding-top: 8px;
+
+        &.asterisk {
+          padding-top: 0;
+        }
+      }
+    }
+
+    input {
+      padding-top: .5em;
+      padding-bottom: .5em;
+    }
+  }
+
+  .search-field {
+    input {
+      padding-top: 0.5em;
+      padding-bottom: .5em;
+    }
+
+    .icon {
+      padding-top: 8px !important;
+    }
+  }
+
+  .reset-filter {
+    text-decoration: none;
+    color: #888;
+    position: absolute;
+    right: 0;
+    top: -40px;
+
+    &:hover {
+      color: #555;
+    }
+
+    .icon {
+      margin: 0;
+    }
   }
 }

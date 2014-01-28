@@ -25,6 +25,7 @@
         </div>
 
         <div class="date field">
+          from:
           <div class="ui left labeled icon input">
             <input id="from_date" type="text" placeholder="From date" class="datepicker" ng-model="fromDate" ng-change="setFromDateFilter(fromDate)">
             <i class="calendar icon right floated"></i>
@@ -35,6 +36,7 @@
         </div>
 
         <div class="date field">
+          to:
           <div class="ui left labeled icon input">
             <input id="to_date" type="text" placeholder="To date" class="datepicker" ng-model="toDate" ng-change="setToDateFilter(toDate)">
             <i class="calendar icon right floated"></i>
@@ -44,11 +46,15 @@
           </div>
         </div>
 
-        <a href="" ng-click="resetAllFilters()">Reset filters</a>
         <div class="ui icon search-field input right floated">
           <input type="text" placeholder="Filter.." ng-model="keyword" ng-change="setKeywordFilter(keyword)" id="keyword">
           <i class="search link icon"></i>
         </div>
+        
+        <a href="" ng-click="resetAllFilters()" class="reset-filter">
+          <i class="remove circle icon"></i> Reset filters
+        </a>
+
     </div>
   </div>
 
