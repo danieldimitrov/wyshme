@@ -1,0 +1,115 @@
+.deckgrid[source="allFeaturedItems"] {
+  &::before {
+    content: '5 .column.size-1-5.ui.items .item' !important;
+  }
+  .ui.items:first-child {
+    width: 60%;
+
+    > .item > .image {
+      height: 400px;
+      overflow: hidden;
+
+      img {
+        margin-top: -30%;
+      }
+    }
+  }
+
+  .ui.items:not(:first-child) {
+    width: 20%;
+
+    > .item {
+      .name a {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+      }
+
+      > .image {
+        height: 160px;
+        overflow: hidden;
+
+        .ui.buttons.actions {
+          left: 0 !important;
+          width: 100% !important;
+          -webkit-transform: translate(0, 0) !important;
+          -moz-transform: translate(0, 0) !important;
+          transform: translate(0, 0) !important;
+
+          button {
+            font-size: 12px !important;
+          }
+
+          &.event button {
+            font-size: 11px !important;
+          }
+        }
+      }
+    } 
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .deckgrid[source="allFeaturedItems"] {
+    &::before {
+      content: '1 .column.size-1-1.ui.items .item' !important;
+    }
+
+    .ui.items {
+      width: 100% !important;
+
+      > .item {
+        &:first-child {
+          width: 100%;
+          margin-left: 0;
+          margin-right: 0;
+
+          > .image {
+            height: 250px;
+          }
+        }
+
+        &:not(:first-child) {
+          width: 49%;
+          display: inline-block;
+          margin-left: 0;
+          margin-right: 0;
+          float: left !important;
+
+          > .image {
+            height: 110px;
+
+            .ui.buttons.actions {
+              left: 0 !important;
+              width: 100% !important;
+              -webkit-transform: translate(0, 0) !important;
+              -moz-transform: translate(0, 0) !important;
+              transform: translate(0, 0) !important;
+
+              button {
+                font-size: 12px !important;
+              }
+
+              &.event button {
+                font-size: 10px !important;
+              }
+            }
+          }
+
+          .name a {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+          }
+        }
+
+        &:nth-child(2),
+        &:nth-child(4) {
+          margin: 0 2% 0 0;
+        }
+      }
+    }
+  }
+}
