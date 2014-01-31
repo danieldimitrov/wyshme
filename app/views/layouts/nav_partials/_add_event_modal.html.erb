@@ -1,5 +1,4 @@
-<div id="add-new-event-modal" class="ui modal" ng-controller="CategoriesCtrl">
-  <i class="close icon"></i>
+<div id="add-new-event-modal" class="ui modal" ng-controller="EvntsCtrl">  <i class="close icon"></i>
 
   <div class="header">
     <span>Add new event</span>
@@ -10,7 +9,7 @@
         <label>Name</label>
         <div class="ui left labeled input">
           <input name="event[name]" type="text" required
-                 placeholder="Event name">
+          placeholder="Event name" ng-model="evntData.event.name">
           <div class="ui corner label">
             <i class="icon asterisk"></i>
           </div>
@@ -20,7 +19,7 @@
         <label>Date</label>
         <div class="ui left labeled icon input">
           <input name="event[date]" type="text" required
-                 placeholder="Event date" class="datepicker">
+          placeholder="Event date" class="datepicker" ng-model="evntData.event.date">
           <i class="calendar icon right floated"></i>
           <div class="ui corner label">
             <i class="icon asterisk"></i>
@@ -31,7 +30,7 @@
         <label>Description</label>
         <div class="ui left labeled input">
           <textarea name="event[description]" required
-                    placeholder="Event description"></textarea>
+          placeholder="Event description" ng-model="evntData.event.description"></textarea>
           <div class="ui corner label">
             <i class="icon asterisk"></i>
           </div>
@@ -39,6 +38,6 @@
       </div>
       <div class="ui error message"></div>
     </div>
-    <button class="ui blue submit button">Create Event</button>
+    <button class="ui blue submit button" ng-click="add()">Create Event</button>
   </div>
 </div>
