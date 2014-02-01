@@ -14,3 +14,24 @@
 .ui.page.grid {
   min-width: 240px;
 }
+
+.ui.selection.dropdown,
+.ui.selection.dropdown .menu,
+.ui.selection.dropdown.active,
+.dropdown.item .menu,
+.ui.form textarea,
+.ui.form input[type="text"],
+.ui.form input[type="email"],
+.ui.form input[type="date"],
+.ui.form input[type="password"],
+.ui.form input[type="number"],
+.ui.form input[type="url"],
+.ui.form input[type="tel"],
+.ui.input input,
+.ui.modal {
+  border-radius: 0 !important;
+}
+
+.ui.buttons .button, .ui.button {
+  border-radius: 2px;
+}
