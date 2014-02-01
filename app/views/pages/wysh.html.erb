@@ -46,18 +46,21 @@
           </div>
 
         </div>
+
+        <div class="ui divider"></div>
+
+        <div ng-controller="WyshesCtrl">
+          <div>
+          <div deckgrid source="wyshedFilteredItems"
+               cardTemplate="/templates/wysh_card"
+               class="deckgrid clearfix"></div>
+          </div>
+
+          <%= render partial: 'items/add_to_event_modal' %>
+          <%= render partial: 'items/item_details' %>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div ng-controller="WyshesCtrl">
-    <div>
-    <div deckgrid source="wyshedFilteredItems"
-         cardTemplate="/templates/wysh_card"
-         class="deckgrid clearfix"></div>
     </div>
-
-    <%= render partial: 'items/add_to_event_modal' %>
-    <%= render partial: 'items/item_details' %>
   </div>
 </div>
