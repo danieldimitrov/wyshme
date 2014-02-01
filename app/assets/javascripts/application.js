@@ -53,6 +53,8 @@ $(function() {
   $('#wysh-via-url-modal.modal').modal('attach events', '.wysh-via-url', 'show');
   $('#add-new-event-modal.modal').modal('attach events', '.add-new-event', 'show');
   $('#create-alert-modal.modal').modal('attach events', '.create-alert', 'show');
+  $('#share-list-modal').modal('attach events', '.share-trigger', 'show');
+  $('#share-event-modal').modal('attach events', '.share-trigger', 'show');
   */
 
   $(document).click(function() {
