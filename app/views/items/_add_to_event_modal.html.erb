@@ -1,43 +1,60 @@
 <div id="add-to-event-modal" class="ui modal">
   <i class="close icon"></i>
 
+  <div class="header">
+    <span>Add Wysh to Event</span>
+  </div>
   <div class="content">
-    <div class="ui two column divided grid">
-      <div class="column">
-        <div class="share-thumb">
-          <img src="http://wyshme-items.s3.amazonaws.com/items/images/000/000/007/original/633e34425381befd25deced140d9f628.jpg?1386804209">
-        </div>  
-      </div>
-
-      <div class="column">
-        
-        <div class="ui form">
-          <h4>Adapter</h4>
-
-          <div class="field">
-            <div class="ui left labeled input">
-              <input name="" type="text" required
-                     placeholder="Email Addresses">
-              <div class="ui corner label">
-                <i class="icon asterisk"></i>
-              </div>
-            </div>
-          </div>
-          <div class="field">
-            <div class="ui left labeled input">
-              <textarea name="" required
-                        placeholder="Personal Message"></textarea>
-              <div class="ui corner label">
-                <i class="icon asterisk"></i>
-              </div>
-            </div>
-          </div>
-          <div class="ui error message"></div>
+    <div class="event-list">
+      <div class="ui selection dropdown">
+        <div class="text">Events List</div>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <div class="item" data-value="1">Event List #1</div>
+          <div class="item" data-value="0">Event List #1</div>
         </div>
-        <button class="ui blue submit button">Share Item</button>
       </div>
+      <button class="ui blue submit button">Add Wysh</button>
     </div>
 
+    <div class="ui clearing divider"></div>
 
+    <h4>Or create new event</h4>
+
+    <div class="ui form">
+      <div class="field">
+        <label>Name</label>
+        <div class="ui left labeled input">
+          <input name="event[name]" type="text" required
+                 placeholder="Event name">
+          <div class="ui corner label">
+            <i class="icon asterisk"></i>
+          </div>
+        </div>
+      </div>
+      <div class="date field">
+        <label>Date</label>
+        <div class="ui left labeled icon input">
+          <input name="event[date]" type="text" required
+                 placeholder="Event date" class="datepicker">
+          <i class="calendar icon right floated"></i>
+          <div class="ui corner label">
+            <i class="icon asterisk"></i>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <label>Description</label>
+        <div class="ui left labeled input">
+          <textarea name="event[description]" required
+                    placeholder="Event description"></textarea>
+          <div class="ui corner label">
+            <i class="icon asterisk"></i>
+          </div>
+        </div>
+      </div>
+      <div class="ui error message"></div>
+    </div>
+    <button class="ui blue submit button">Create Event</button>
   </div>
 </div>

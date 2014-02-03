@@ -5,22 +5,14 @@ App.directive 'bnDelegate', ($parse) ->
     if config.length is 3
       target = $(config[0].trim())
       func = config[1].trim()
-      expression = config[2].trim()
+      action = config[2].trim()
     else
       throw 'bnDelegate: configuration is wrong!'
 
-    expressionHandler = $parse(expression)
-    
     element.on 'click.bnDelegate', (event) ->
-      event.preventDefault()
-
       # TODO: remove this hack which depends on dimmer container behaviour
       target.css('z-index', 9999) if func is 'dimmer'
-      target[func]('show')
-
-      localScope = $(event.target).scope()
-      localScope.$apply ->
-        expressionHandler localScope
+      target[func](action)
     
     $scope.$on '$destroy', (event) ->
       element.off 'click.bnDelegate'

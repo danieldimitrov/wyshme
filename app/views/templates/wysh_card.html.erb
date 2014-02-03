@@ -5,9 +5,8 @@
 <div class="content">
 
   <h2 class="name">
-    <a href="#" bn-delegate="#selected-item | dimmer | mother.selectItem(card)">
-      {{card.name}}
-    </a>
+    <a href="#" bn-delegate="#selected-item | dimmer | show"
+       data-ng-click="mother.selectItem(card)">{{card.name}}</a>
   </h2>
   <div>
     <div class="price left floated">${{card.price}}</div>

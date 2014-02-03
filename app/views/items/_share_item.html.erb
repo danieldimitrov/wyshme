@@ -1,60 +1,40 @@
-<div id="add-to-event-modal" class="ui modal">
-  <i class="close icon"></i>
+<div id="share-item-modal" class="ui modal">
+  <i class="close icon" data-ng-click="clearSelectedItem()"></i>
 
-  <div class="header">
-    <span>Add Wysh to Event</span>
-  </div>
   <div class="content">
-    <div class="event-list">
-      <div class="ui selection dropdown">
-        <div class="text">Events List</div>
-        <i class="dropdown icon"></i>
-        <div class="menu">
-          <div class="item" data-value="1">Event List #1</div>
-          <div class="item" data-value="0">Event List #1</div>
+    <div class="ui two column divided grid">
+      <div class="column">
+        <div class="share-thumb">
+          <img src="" data-ng-src="{{selectedItem.image_url}}">
         </div>
       </div>
-      <button class="ui blue submit button">Add Wysh</button>
+
+      <div class="column">
+        <div class="ui form">
+          <h4>{{selectedItem.name}}</h4>
+
+          <div class="field">
+            <div class="ui left labeled input">
+              <input required ng-model="shareForm.recipients"
+                     name="recipients" type="text"
+                     placeholder="Email Addresses, comma separated">
+              <div class="ui corner label">
+                <i class="icon asterisk"></i>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left labeled input">
+              <textarea ng-model="shareForm.message" name="message"
+                        placeholder="Personal Message"></textarea>
+            </div>
+          </div>
+          <div class="ui error message"></div>
+        </div>
+        <button class="ui blue submit button"
+                bn-delegate="#share-item-modal | modal | hide" data-ng-click="shareItem(selectedItem)">Share Item</button>
+      </div>
     </div>
 
-    <div class="ui clearing divider"></div>
-
-    <h4>Or create new event</h4>
-
-    <div class="ui form">
-      <div class="field">
-        <label>Name</label>
-        <div class="ui left labeled input">
-          <input name="event[name]" type="text" required
-                 placeholder="Event name">
-          <div class="ui corner label">
-            <i class="icon asterisk"></i>
-          </div>
-        </div>
-      </div>
-      <div class="date field">
-        <label>Date</label>
-        <div class="ui left labeled icon input">
-          <input name="event[date]" type="text" required
-                 placeholder="Event date" class="datepicker">
-          <i class="calendar icon right floated"></i>
-          <div class="ui corner label">
-            <i class="icon asterisk"></i>
-          </div>
-        </div>
-      </div>
-      <div class="field">
-        <label>Description</label>
-        <div class="ui left labeled input">
-          <textarea name="event[description]" required
-                    placeholder="Event description"></textarea>
-          <div class="ui corner label">
-            <i class="icon asterisk"></i>
-          </div>
-        </div>
-      </div>
-      <div class="ui error message"></div>
-    </div>
-    <button class="ui blue submit button">Create Event</button>
   </div>
 </div>

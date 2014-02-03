@@ -55,5 +55,8 @@ App.run ($rootScope) ->
   $rootScope.$on 'categoryChangeEmit', (event, args) ->
     $rootScope.$broadcast 'categoryChanged', args
 
+  $rootScope.$on 'itemSelectedEmit', (event, args) ->
+    $rootScope.$broadcast 'itemSelected', args
+
 App.controller 'PagesCtrl', ['$scope', ($scope) ->
 ]

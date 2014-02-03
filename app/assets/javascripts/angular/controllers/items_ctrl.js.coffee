@@ -5,11 +5,11 @@ App.controller 'ItemsCtrl', ['$scope', '$filter', 'Item', 'Auth', ($scope, $filt
   $scope.selectedCategoryId = null
   $scope.selectedItem = null
   $scope.itemForEvent = null
+  $scope.shareForm = recipients: '', message: ''
 
   updateItem = (item) ->
     angular.forEach $scope.items, (itm, key) ->
       $scope.items[key] = item if itm.id == item.id
-    # It must update items' list, which leads to grid redraw, but it is not...
     $scope.categorizedItems =
       $filter('categorizeItems')($scope.items, $scope.selectedCategoryId)
 
@@ -23,6 +23,9 @@ App.controller 'ItemsCtrl', ['$scope', '$filter', 'Item', 'Auth', ($scope, $filt
 
   $scope.clearSelectedItem = ->
     $scope.selectedItem = null
+
+  $scope.$on 'itemSelected', (event, args) ->
+    $scope.selectItem(args.item)
 
   $scope.items = Item.query null, (items) ->
     $scope.categorizedItems =
@@ -42,4 +45,20 @@ App.controller 'ItemsCtrl', ['$scope', '$filter', 'Item', 'Auth', ($scope, $filt
 
   $scope.addItemToEvent = (item) ->
     $scope.itemForEvent = item
+
+  $scope.shareItem = ->
+    user_token = Auth.user.access_token
+    if user_token? and user_token != ''
+      Item.share(
+        { id: $scope.selectedItem.id, access_token: user_token },
+        $scope.shareForm,
+        (share) ->
+          # if share.id?
+          #   console.log 'shared successfully'
+          # else
+          #   console.log 'item is not shared'
+      )
+
+    $scope.shareForm = recipients: '', message: ''
+    $scope.clearSelectedItem()
 ]
