@@ -18,11 +18,11 @@
 
     <div class="right menu" ng-controller="AuthCtrl">
       <span ng-show="auth.isLoggedIn()">
+      
         <%= render partial: 'layouts/nav_partials/wysh_lists' %>
 
         <%= render partial: 'layouts/nav_partials/events' %>
 
-        <%= render partial: 'layouts/nav_partials/peeps' %>
       </span>
 
       <%= render partial: 'layouts/nav_partials/logged_in'%>
