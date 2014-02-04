@@ -9,7 +9,7 @@ Wyshme::Application.routes.draw do
 
   get 'account' => 'account#index'
 
-  get 'events',  to: 'pages#events'
+  #get 'events',  to: 'pages#events'
   get 'wysh',    to: 'pages#wysh'
 
   root 'items#index'
@@ -21,5 +21,7 @@ Wyshme::Application.routes.draw do
   get '/mock/events/shared',        to: 'mocks#shared_events', as: 'mock_shared_events' # Shared Events (Events)
   get '/mock/events/search',        to: 'mocks#search_events', as: 'mock_search_events' # Search (Events)
   get '/mock/peeps/see-all',        to: 'mocks#see_all',       as: 'mock_see_all'       # Ses All (Peeps)
+  get '/mock/lists', to: 'mocks#lists', as: 'mock_lists'
+  get '/mock/events', to: 'mocks#events', as: 'mock_events'
 
 end
