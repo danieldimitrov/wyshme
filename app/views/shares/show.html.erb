@@ -1,47 +1,25 @@
 <div class="center ui items">
-  <h1>Ivan shared with you</h1>
+  <h1>{{share.user_name}} shared {{share.content_type}} with you</h1>
   
   <div class="active item">
     
     <div class="image">
-      <img src="http://wyshme-items.s3.amazonaws.com/items/images/000/000/013/original/hungergames.jpg?1386870624" data-ng-src="http://wyshme-items.s3.amazonaws.com/items/images/000/000/013/original/hungergames.jpg?1386870624">
+      <img src="" data-ng-src="{{share.content.image_url}}">
     </div>
 
     <div class="content">
       <div class="ui buttons actions">
         <button class="ui blue button"><i class="like icon"></i></button>
-        <div class="ui label ng-binding">6 Wyshes</div>
+        <div class="ui label ng-binding">{{share.content.wyshes}} Wyshes</div>
         <button class="ui like button"><i class="thumbs up outline icon"></i></button>
-        <div class="ui label ng-binding">5 Likes</div>
+        <div class="ui label ng-binding">{{share.content.likes}} Likes</div>
       </div>
-      <div class="ui buttons event actions">
-        <button class="ui button add-to-event" bn-delegate="#add-to-event-modal | modal | show" data-ng-click="addItemToEvent(selectedItem)">
-          <i class="share icon"></i>
-          Share
-        </button>
-      </div>
-      <div class="name ng-binding">Hunger Games</div>
-      <p class="price ng-binding">$ 7.99</p>
-      <p class="description ng-binding">Set in a dystopian future in which the income gap is greater than ever, 24 underprivileged youth fight to the death every year in a televised spectacle designed to entertain the rich and give the poor enough hope to quell any further unrest.</p>
+      <div class="name ng-binding">{{share.content.name}}</div>
+      <p class="price ng-binding">{{share.content.price}}</p>
+      <p class="description ng-binding">{{share.content.description}}</p>
 
       <div class="extended-content">
         <div class="ui section divider"></div>
-
-        <div class="wyshed-by-list">
-          <h3>Wyshed by</h3>
-          <a href="#" class="circular ui small icon button">
-            <i class="icon user"></i>
-          </a>
-          <a href="#" class="circular ui small icon button">
-            <i class="icon user"></i>
-          </a>
-          <a href="#" class="circular ui small icon button">
-            <i class="icon user"></i>
-          </a>
-          <a href="#" class="circular ui small icon button">
-            <i class="icon user"></i>
-          </a>
-        </div>
 
         <div class="related-list">
           <h3>Related Items</h3>
