@@ -6,8 +6,8 @@ App.controller 'WyshesCtrl', ['$scope', '$filter', 'Item', 'Auth', ($scope, $fil
   $scope.itemForEvent = null
 
   $scope.wyshedItems = Item.wyshed(
-    { access_token: Auth.user.access_token }, null, (items) ->
-      console.log 'wyshedItems', items
+    { access_token: Auth.user.access_token }, null,
+    (items) ->
       $scope.wyshedFilteredItems = items
   )
 
