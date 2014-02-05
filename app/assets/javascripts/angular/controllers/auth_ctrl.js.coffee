@@ -1,6 +1,5 @@
 App.controller 'AuthCtrl', ['$scope', 'Auth', ($scope, Auth) ->
   $scope.successAuth = (data) ->
-    console.log('success', data)
     $('#register-modal.modal').modal('hide');
     $('#login-modal.modal').modal('hide');
     # Store user data in the cookies.
@@ -9,7 +8,6 @@ App.controller 'AuthCtrl', ['$scope', 'Auth', ($scope, Auth) ->
     # Close login/register dialog
 
   $scope.errorAuth = (data, status) ->
-    console.log('error', data, status)
     # If response code is 422 on register it means error.
     # Possibly, email is already taken or password is not safe
 

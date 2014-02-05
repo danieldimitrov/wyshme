@@ -29,8 +29,11 @@
 
       <div class="item" ng-hide="auth.isLoggedIn()">
         <div>
-          <a href="#" class="login-toggler">Login</a>
-          or <a href="#" class="register-toggler">Register</a>
+          <a bn-delegate="#login-modal | modal | show"
+             href="" class="login-toggler">Login</a>
+          or
+          <a bn-delegate="#register-modal | modal | show"
+             href="" class="register-toggler">Register</a>
         </div>
         <%= render partial: 'layouts/nav_partials/login_modal' %>
 
