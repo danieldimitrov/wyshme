@@ -12,21 +12,21 @@
       <i class="thumbs up outline icon"></i>
     </button>
     <div class="ui label">{{card.likes}} Likes</div>
-    <button class="ui basic close button">close</button>
+    <button class="ui basic close button" data-ng-click="mother.clearSelectedItem()">close</button>
   </div>
 
   <div class="ui buttons event actions">
     <button class="ui button add-to-event"
-            bn-delegate="#add-to-event-modal | modal | mother.addItemToEvent(card)">
-      <i class="calendar icon"></i>
-      Add to Event
+            bn-delegate="#share-item-modal | modal | show" data-ng-click="mother.selectItem(card)">
+      <i class="share icon"></i>
+      Share
     </button>
   </div>
 </div>
 
 <div class="content">
   <h2 class="name">
-    <a href="#" bn-delegate="#selected-item | dimmer | mother.selectItem(card)">
+    <a href="#" bn-delegate="#selected-item | dimmer | show" data-ng-click="mother.selectItem(card)">
       {{card.name}}
     </a>
   </h2>

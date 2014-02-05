@@ -1,0 +1,40 @@
+<div id="share-item-modal" class="ui modal">
+  <i class="close icon" data-ng-click="clearSelectedItem()"></i>
+
+  <div class="content">
+    <div class="ui two column divided grid">
+      <div class="column">
+        <div class="share-thumb">
+          <img src="" data-ng-src="{{selectedItem.image_url}}">
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="ui form">
+          <h4>{{selectedItem.name}}</h4>
+
+          <div class="field">
+            <div class="ui left labeled input">
+              <input required ng-model="shareForm.recipients"
+                     name="recipients" type="text"
+                     placeholder="Email Addresses, comma separated">
+              <div class="ui corner label">
+                <i class="icon asterisk"></i>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left labeled input">
+              <textarea ng-model="shareForm.message" name="message"
+                        placeholder="Personal Message"></textarea>
+            </div>
+          </div>
+          <div class="ui error message"></div>
+        </div>
+        <button class="ui blue submit button"
+                bn-delegate="#share-item-modal | modal | hide" data-ng-click="shareItem(selectedItem)">Share Item</button>
+      </div>
+    </div>
+
+  </div>
+</div>

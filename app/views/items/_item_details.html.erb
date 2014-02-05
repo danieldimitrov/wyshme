@@ -21,9 +21,10 @@
               </div>
               <div class="ui buttons event actions">
                 <button class="ui button add-to-event"
-                        bn-delegate="#add-to-event-modal | modal | addItemToEvent(selectedItem)">
-                  <i class="calendar icon"></i>
-                  Add to Event
+                        bn-delegate="#add-to-event-modal | modal | show"
+                        data-ng-click="addItemToEvent(selectedItem)">
+                  <i class="share icon"></i>
+                  Share
                 </button>
               </div>
               <div class="name">{{selectedItem.name}}</div>

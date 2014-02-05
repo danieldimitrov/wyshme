@@ -18,4 +18,7 @@ App.factory 'Item', ['$resource', 'API_HOST', ($resource, API_HOST) ->
       method: 'GET'
       url: "#{API_HOST}/api/items/wyshed"
       isArray: true
+    share:
+      method: 'POST'
+      url: "#{API_HOST}/api/items/:id/share"
 ]

@@ -1,9 +1,10 @@
 Wyshme::Application.routes.draw do
 
   resources :lists,  only: [:index]
-  resources :items,  only: [:index]
+  resources :items,  only: [:index, :show]
   resources :catalog, only: [:index]
   resources :categories, only: [:show]
+  resources :shares, only: [:show]
 
   get 'templates(/:action)', controller: :templates
 
@@ -11,6 +12,7 @@ Wyshme::Application.routes.draw do
 
   #get 'events',  to: 'pages#events'
   get 'wysh',    to: 'pages#wysh'
+
 
   root 'items#index'
 

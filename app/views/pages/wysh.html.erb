@@ -4,6 +4,9 @@
       <div class="ui piled segment">
         <h1 class="ui header">
           <i class="list icon"></i> My Wyshes
+          <div class="ui blue button right floated share-trigger">
+            Share
+          </div>
         </h1>
 
         <div class="ui divider"></div>
@@ -57,6 +60,7 @@
           </div>
 
           <%= render partial: 'items/add_to_event_modal' %>
+          <%= render partial: 'items/share_item' %>
           <%= render partial: 'items/item_details' %>
         </div>
       </div>
@@ -64,3 +68,6 @@
     </div>
   </div>
 </div>
+
+
+<%= render partial: 'share_list' %>

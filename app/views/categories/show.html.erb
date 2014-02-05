@@ -55,10 +55,15 @@
           <i class="remove circle icon"></i> Reset filters
         </a>
 
-      <div class="ui divider"></div>
+        <div class="ui divider"></div>
 
-      <div deckgrid source="items.filtered" cardTemplate="/templates/deckgrid_card" class="deckgrid clearfix"></div>
+        <div deckgrid
+             source="items.filtered"
+             cardTemplate="/templates/deckgrid_card"
+             class="deckgrid clearfix"></div>
+      </div>
     </div>
+    <%= render partial: 'items/item_details' %>
+    <%= render partial: 'items/share_item' %>
   </div>
-
 </div>
