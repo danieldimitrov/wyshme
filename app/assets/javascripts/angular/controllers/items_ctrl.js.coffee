@@ -27,7 +27,7 @@ App.controller 'ItemsCtrl', ['$scope', '$filter', 'Item', 'Auth', ($scope, $filt
   $scope.$on 'itemSelected', (event, args) ->
     $scope.selectItem(args.item)
 
-  $scope.items = Item.query null, (items) ->
+  $scope.items = Item.query { per_page: 100 }, (items) ->
     $scope.categorizedItems =
       $filter('categorizeItems')(items, $scope.selectedCategoryId)
 
